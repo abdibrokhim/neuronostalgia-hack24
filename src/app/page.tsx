@@ -159,7 +159,7 @@ export default function Home() {
               type="text"
               value={webUrl}
               onChange={(e) => setwebUrl(e.target.value)}
-              placeholder="Enter loom video link here..."
+              placeholder="Enter website link here..."
               className="placeholder:text-[var(--text-c)] placeholder:text-sm text-sm bg-transparent focus:outline-none text-[var(--text-a)] w-full px-4 py-2 rounded-full shadow transition-colors border border-[var(--ring)] focus:border-[var(--violet)]"
               disabled={loading}
             />

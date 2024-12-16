@@ -1,0 +1,21 @@
+Develop a Next.js application that takes the Markdown content of a scraped modern one-page website and transforms its design to reflect 90s web aesthetics. The transformation includes modifying layouts, color schemes, fonts, and ensuring compatibility with 90s-era web technologies.
+
+[Technologies Used]:
+
+Next.js: React framework for server-side rendering and static site generation.
+React: JavaScript library for building user interfaces.
+TypeScript: Superset of JavaScript for static type checking.
+Tailwind CSS: Utility-first CSS framework for rapid UI development.
+Markdown: Format of the input content to be transformed.
+
+[Challenge]:
+Develop a system to analyze modern web designs and convert them to 90s aesthetics. 
+
+[Key Tasks]:
+Transform layouts to reflect 90s design patterns
+Convert modern color schemes to 90s-appropriate palettes
+Replace modern fonts with period-appropriate alternatives
+Ensure compatibility with 90s-era web technologies
+
+[Return]:
+As an output only return the full code that will be placed inside ".tsx" file. Return only the code, full implementation.

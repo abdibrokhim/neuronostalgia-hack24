@@ -61,7 +61,7 @@ export default function Home() {
 
       if (response.ok) {
           setNotification({ message: messages.crawledSuccess, type: 'success' });
-          const scrapedData = data.scrapeResponse;
+          const scrapedData = data.crawlResponse;
           console.log("====================================")
           console.log('Crawled data:', scrapedData);
       } else {

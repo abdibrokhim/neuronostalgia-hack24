@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# make your website retired. LOL
 
-## Getting Started
+## 📦 Run Locally
 
-First, run the development server:
+Clone the repository with:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```shell
+git clone https://github.com/abdibrokhim/neuronostalgia-hack24
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install the dependencies with:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```shell
+npm install
+```
+and 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run the development server with:
 
-## Learn More
+```shell
+npm run dev
+```
+Open http://localhost:3000 in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## 🥂 Discord community
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Join our community on Discord [Open Community](https://discord.gg/nVtmDUN2sR)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Say me " Hi, 👋 " : https://www.linkedin.com/in/abdibrokhim/
 
-## Deploy on Vercel
+All tutorials available here: 
+* Github: https://github.com/abdibrokhim?tab=repositories 
+* Medium: https://medium.com/@abdibrokhim 
+* Dev: https://dev.to/abdibrokhim
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+` the only thing that he cares about is what the world thinks of him because he's a narcissist `
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Join us! Open Community:
+* LinkedIn: https://linkedin.com/company/opencommunity
+* X: https://x.com/@xopencommunity
+* Discord: https://discord.gg/nVtmDUN2sR
+* YouTube: https://youtube.com/@theopencommunity
+* Instagram: https://instagram.com/theopencommunity
+
+## 🐞 Bug report or Feature request
+
+Message me at [click me](https://theopencommunity.co)
+
+## 👋 Want to Contribute?
+
+Kindly check the [CONTRIBUTING.md](https://github.com/abdibrokhim/neuronostalgia-hack24/blob/main/CONTRIBUTING.md)
+
+## ⭐️ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=abdibrokhim/neuronostalgia-hack24&type=Date)](https://star-history.com/#abdibrokhim/neuronostalgia-hack24&Date)
+
+## 🙏 Support
+
+Become a [Patron](https://www.patreon.com/abdibrokhim). follow on [LinkedIn](https://www.linkedin.com/in/abdibrokhim/).
+
+## 🦄 Want to learn build stuff?
+
+Whether you need help with… ( you name it, 🤓 lol ). I’m here https://topmate.io/abdibrokhim to support you.

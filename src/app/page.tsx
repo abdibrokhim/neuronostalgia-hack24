@@ -1,101 +1,128 @@
-import Image from "next/image";
+'use client';
+
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
+import Notification from './utils/notify';
+import { loader } from './utils/loader';
+// import { Analytics } from "@vercel/analytics/react"
+import Footer from './components/Footer';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [webUrl, setwebUrl] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [notification, setNotification] = useState<{ message: string; type: 'error' | 'success' | 'info' } | null>(null);  // notification message
+  const messages = {
+    crawling: 'Crawling website...',
+    redesigning: 'Redesigning website...',
+    stillRedesigning: 'Still redesigning website...',
+    crawledSuccess: 'Website crawled successfully.',
+  }
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  const analyseUrl = async () => {
+      if (!webUrl) return;
+
+      setLoading(true);
+      setNotification({ message: messages.crawling, type: 'info' });
+
+      try {
+      const response = await fetch('/api/scrape', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: webUrl }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+          setNotification({ message: messages.crawledSuccess, type: 'success' });
+          const scrapedData = data.scrapeResponse;
+          console.log("====================================")
+          console.log('Scraped data:', scrapedData);
+      } else {
+          setNotification({ message: data.error || 'An unexpected error occurred.', type: 'error' });
+      }
+      } catch (error) {
+          console.error('Error downloading video:', error);
+          alert('An unexpected error occurred.');
+      } finally {
+          setLoading(false);
+      }
+  };
+
+  return (
+    <div className="grid grid-rows-[20px_1fr_20px] bg-[var(--bg-a)] items-center justify-items-center min-h-screen pb-8 gap-8 p-4 font-[family-name:var(--font-geist-sans)]">
+      {/* <Analytics /> */}
+      <main className="flex flex-col gap-8 row-start-2 items-center w-full max-w-7xl">
+          
+          {notification && (
+            <Notification
+              message={notification.message}
+              type={notification.type}
+              onClose={() => setNotification(null)}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+          )}
+          
+          <div className="mb-6 mt-16 sm:mt-24 w-full max-w-2xl text-center text-xl sm:text-2xl md:text-3xl leading-9">
+            <h1 className="text-[var(--text-a)] font-semibold flex flex-row gap-2">
+              <p className="text-center mx-auto">AI-Powered Time Machine for Web Design</p>
+            </h1>
+
+            <div className="relative w-56 h-56 mx-auto mt-4">
+              <Image
+                aria-hidden
+                src="/assets/windows_95_s_video_p.webp"
+                alt="pc"
+                fill
+                className="object-contain"
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Image
+                  aria-hidden
+                  src="/assets/chill-guy.png"
+                  alt="me"
+                  width={100}
+                  height={100}
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full max-w-3xl mx-auto flex flex-col sm:flex-row items-center p-4 mb-8 shadow-lg gap-4 bg-[var(--bg-a)] rounded-full">
+            <input
+              type="text"
+              value={webUrl}
+              onChange={(e) => setwebUrl(e.target.value)}
+              placeholder="Enter loom video link here..."
+              className="placeholder:text-[var(--text-c)] placeholder:text-sm text-sm bg-transparent focus:outline-none text-[var(--text-a)] w-full px-4 py-2 rounded-full shadow transition-colors border border-[var(--ring)] focus:border-[var(--violet)]"
+              disabled={loading}
+            />
+            <button
+              disabled={webUrl === '' || loading}
+              onClick={analyseUrl}
+              className={`flex items-center justify-center py-2 px-4 sm:px-8 text-sm md:text-sm rounded-full shadow transition-colors 
+                ${webUrl === '' || loading 
+                  ? 'cursor-not-allowed bg-[var(--ring)] text-[var(--text-a)]' 
+                  : 'cursor-pointer bg-[var(--violet)] hover:bg-[var(--ring)] text-[var(--text-a)]'
+                }`}
+            > <span className="mr-2">Back90s</span>
+              {!loading 
+                ? (
+                  <Image
+                    aria-hidden
+                    src="/history-line-icon.svg"
+                    alt="Download Icon"
+                    width={20}
+                    height={20}
+                  />
+                )
+                : loader()
+              }
+            </button>
+          </div>
+          
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }

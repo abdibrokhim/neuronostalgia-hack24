@@ -20,6 +20,29 @@ export default function Home() {
     scrapedSuccess: 'Website scraped successfully.',
     redesignSuccess: 'Website redesigned successfully.',
   }
+  const [scrapedDataFilePath, setScrapedDataFilePath] = useState<string | null>(null);
+  const [redesignedFolderPath, setRedesignedFolderPath] = useState<string | null>(null);
+  const scrapeStates = {
+    singlePage: 'Single',
+    fullSite: 'Multi',
+  }
+  const [scrapeState, setScrapeState] = useState(scrapeStates.singlePage);
+  const [pageCount, setPageCount] = useState<number>(1);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const handleScrape = () => {
+    if (pageCount === 1) {
+      scrapeUrl();
+    } else {
+      crawlUrl();
+    }
+  };
+
+  const selectPages = (count: number) => {
+    setPageCount(count);
+    setScrapeState(count === 1 ? scrapeStates.singlePage : scrapeStates.fullSite);
+    setShowDropdown(false);
+  };
 
   const crawlUrl = async () => {
       if (!webUrl) return;
@@ -74,6 +97,8 @@ export default function Home() {
           console.log("====================================")
           console.log(scrapedDataMsg);
           console.log('Scraped data saved at:', scrapedDataFilePath);
+
+          setScrapedDataFilePath(scrapedDataFilePath);
       } else {
           setNotification({ message: data.error || 'An unexpected error occurred.', type: 'error' });
       }
@@ -85,8 +110,14 @@ export default function Home() {
       }
   };
 
+  useEffect(() => {
+      if (scrapedDataFilePath) {
+          redesignWebsite();
+          setScrapedDataFilePath(null);
+      }
+  }, [scrapedDataFilePath]);
+
   const redesignWebsite = async () => {
-      if (!webUrl) return;
 
       setLoading(true);
       setNotification({ message: messages.redesigning, type: 'info' });
@@ -95,15 +126,17 @@ export default function Home() {
       const response = await fetch('/api/redesign', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ url: webUrl }),
+          body: JSON.stringify({ filePath: scrapedDataFilePath }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
           setNotification({ message: messages.redesignSuccess, type: 'success' });
-          const scrapedData = data.scrapeResponse;
+          const newwebsitepath = data.newwebsitepath;
           console.log("====================================")
+          console.log('Website redesigned at:', newwebsitepath);
+          setRedesignedFolderPath(newwebsitepath);
       } else {
           setNotification({ message: data.error || 'An unexpected error occurred.', type: 'error' });
       }
@@ -132,26 +165,6 @@ export default function Home() {
             <h1 className="text-[var(--text-a)] font-semibold flex flex-row gap-2">
               <p className="text-center mx-auto">AI-Powered Time Machine for Web Design</p>
             </h1>
-
-            <div className="relative w-56 h-56 mx-auto mt-4">
-              <Image
-                aria-hidden
-                src="/assets/windows_95_s_video_p.webp"
-                alt="pc"
-                fill
-                className="object-contain"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Image
-                  aria-hidden
-                  src="/assets/chill-guy.png"
-                  alt="me"
-                  width={100}
-                  height={100}
-                  className="object-cover"
-                />
-              </div>
-            </div>
           </div>
 
           <div className="w-full max-w-3xl mx-auto flex flex-col sm:flex-row items-center p-4 mb-8 shadow-lg gap-4 bg-[var(--bg-a)] rounded-full">
@@ -163,30 +176,107 @@ export default function Home() {
               className="placeholder:text-[var(--text-c)] placeholder:text-sm text-sm bg-transparent focus:outline-none text-[var(--text-a)] w-full px-4 py-2 rounded-full shadow transition-colors border border-[var(--ring)] focus:border-[var(--violet)]"
               disabled={loading}
             />
-            <button
-              disabled={webUrl === '' || loading}
-              onClick={scrapeUrl}
-              className={`flex items-center justify-center py-2 px-4 sm:px-8 text-sm md:text-sm rounded-full shadow transition-colors 
-                ${webUrl === '' || loading 
-                  ? 'cursor-not-allowed bg-[var(--ring)] text-[var(--text-a)]' 
-                  : 'cursor-pointer bg-[var(--violet)] hover:bg-[var(--ring)] text-[var(--text-a)]'
-                }`}
-            > <span className="mr-2">Back90s</span>
-              {!loading 
-                ? (
-                  <Image
-                    aria-hidden
-                    src="/history-line-icon.svg"
-                    alt="Download Icon"
-                    width={20}
-                    height={20}
-                  />
-                )
-                : loader()
-              }
-            </button>
+            <div className="relative flex flex-row gap-4 inline-block text-left">
+              <button
+                disabled={loading}
+                onClick={() => setShowDropdown(!showDropdown)}
+                className={`flex items-center justify-center py-2 px-4 sm:px-8 text-sm md:text-sm rounded-full shadow transition-colors 
+                  ${loading 
+                    ? 'cursor-not-allowed bg-[var(--text-b)] text-[var(--bg-a)]' 
+                    : 'cursor-pointer bg-[var(--text-b)] hover:bg-[var(--text-c)] text-[var(--bg-a)]'
+                  }`}
+              > <span className="mr-2">{scrapeState}</span>
+                {!loading 
+                  ? (
+                    <Image
+                      aria-hidden
+                      src="/line-angle-down-icon.svg"
+                      alt="line-angle-down-icon"
+                      width={14}
+                      height={14}
+                    />
+                  )
+                  : loader()
+                }
+              </button>
+              {showDropdown && (
+                <div className="absolute mt-12 w-32 rounded-md shadow-lg bg-[var(--text-b)] ring-1 ring-black ring-opacity-5 z-10">
+                  <div className="py-1" role="menu">
+                    <button
+                      className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                      onClick={() => selectPages(1)}
+                      role="menuitem"
+                    >
+                      1 page
+                    </button>
+                    <button
+                      className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                      onClick={() => selectPages(2)}
+                      role="menuitem"
+                    >
+                      2 pages
+                    </button>
+                    <button
+                      className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                      onClick={() => selectPages(3)}
+                      role="menuitem"
+                    >
+                      3 pages
+                    </button>
+                    <button
+                      className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                      onClick={() => selectPages(4)}
+                      role="menuitem"
+                    >
+                      4+ pages
+                    </button>
+                  </div>
+                </div>
+              )}
+              <button
+                disabled={webUrl === '' || loading}
+                onClick={handleScrape}
+                className={`flex items-center justify-center py-2 px-4 sm:px-8 text-sm md:text-sm rounded-full shadow transition-colors 
+                  ${webUrl === '' || loading 
+                    ? 'cursor-not-allowed bg-[var(--ring)] text-[var(--text-a)]' 
+                    : 'cursor-pointer bg-[var(--violet)] hover:bg-[var(--ring)] text-[var(--text-a)]'
+                  }`}
+              > <span className="mr-2">Back90s</span>
+                {!loading 
+                  ? (
+                    <Image
+                      aria-hidden
+                      src="/history-line-icon.svg"
+                      alt="Download Icon"
+                      width={18}
+                      height={18}
+                    />
+                  )
+                  : loader()
+                }
+              </button>
+            </div>
           </div>
-          
+
+          {redesignedFolderPath && (
+            <div className="w-full max-w-3xl mx-auto flex flex-col items-center p-4 mb-8 shadow-lg gap-4 bg-[var(--bg-a)] rounded-full">
+              <a
+                href={redesignedFolderPath}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center py-2 px-4 sm:px-8 text-sm md:text-sm rounded-full shadow transition-colors bg-[var(--violet)] hover:bg-[var(--ring)] text-[var(--text-a)]"
+              >
+                <span className="mr-2">View redesigned website</span>
+                <Image
+                  aria-hidden
+                  src="/arrow-top.svg"
+                  alt="External Link Icon"
+                  width={18}
+                  height={18}
+                />
+              </a>
+            </div>
+          )}
       </main>
       <Footer />
     </div>

@@ -12,6 +12,7 @@
     "@mendable/firecrawl-js": "^1.9.4",
     "markdown-to-jsx": "^7.7.1",
     "next": "15.1.0",
+    "openai": "^4.76.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

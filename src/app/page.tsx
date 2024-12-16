@@ -13,19 +13,22 @@ export default function Home() {
   const [notification, setNotification] = useState<{ message: string; type: 'error' | 'success' | 'info' } | null>(null);  // notification message
   const messages = {
     crawling: 'Crawling website...',
+    scraping: 'Scraping website...',
     redesigning: 'Redesigning website...',
     stillRedesigning: 'Still redesigning website...',
     crawledSuccess: 'Website crawled successfully.',
+    scrapedSuccess: 'Website scraped successfully.',
+    redesignSuccess: 'Website redesigned successfully.',
   }
 
-  const analyseUrl = async () => {
+  const crawlUrl = async () => {
       if (!webUrl) return;
 
       setLoading(true);
       setNotification({ message: messages.crawling, type: 'info' });
 
       try {
-      const response = await fetch('/api/scrape', {
+      const response = await fetch('/api/firecrawl', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ url: webUrl }),
@@ -37,12 +40,75 @@ export default function Home() {
           setNotification({ message: messages.crawledSuccess, type: 'success' });
           const scrapedData = data.scrapeResponse;
           console.log("====================================")
-          console.log('Scraped data:', scrapedData);
+          console.log('Crawled data:', scrapedData);
       } else {
           setNotification({ message: data.error || 'An unexpected error occurred.', type: 'error' });
       }
       } catch (error) {
-          console.error('Error downloading video:', error);
+          console.error('Error scraping website:', error);
+          alert('An unexpected error occurred.');
+      } finally {
+          setLoading(false);
+      }
+  };
+  
+  const scrapeUrl = async () => {
+      if (!webUrl) return;
+
+      setLoading(true);
+      setNotification({ message: messages.scraping, type: 'info' });
+
+      try {
+      const response = await fetch('/api/scrape', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: webUrl }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+          setNotification({ message: messages.scrapedSuccess, type: 'success' });
+          const scrapedDataMsg = data.message;
+          const scrapedDataFilePath = data.filePath;
+          console.log("====================================")
+          console.log(scrapedDataMsg);
+          console.log('Scraped data saved at:', scrapedDataFilePath);
+      } else {
+          setNotification({ message: data.error || 'An unexpected error occurred.', type: 'error' });
+      }
+      } catch (error) {
+          console.error('Error crawling website:', error);
+          alert('An unexpected error occurred.');
+      } finally {
+          setLoading(false);
+      }
+  };
+
+  const redesignWebsite = async () => {
+      if (!webUrl) return;
+
+      setLoading(true);
+      setNotification({ message: messages.redesigning, type: 'info' });
+
+      try {
+      const response = await fetch('/api/redesign', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: webUrl }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+          setNotification({ message: messages.redesignSuccess, type: 'success' });
+          const scrapedData = data.scrapeResponse;
+          console.log("====================================")
+      } else {
+          setNotification({ message: data.error || 'An unexpected error occurred.', type: 'error' });
+      }
+      } catch (error) {
+          console.error('Error redesigning website:', error);
           alert('An unexpected error occurred.');
       } finally {
           setLoading(false);
@@ -99,7 +165,7 @@ export default function Home() {
             />
             <button
               disabled={webUrl === '' || loading}
-              onClick={analyseUrl}
+              onClick={scrapeUrl}
               className={`flex items-center justify-center py-2 px-4 sm:px-8 text-sm md:text-sm rounded-full shadow transition-colors 
                 ${webUrl === '' || loading 
                   ? 'cursor-not-allowed bg-[var(--ring)] text-[var(--text-a)]' 

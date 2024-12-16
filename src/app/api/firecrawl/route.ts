@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     const crawlResponse = await app.crawlUrl(url, {
     limit: 100,
     scrapeOptions: {
-        formats: ['markdown', 'html'],
+        formats: ['markdown'],
     }
     });
 

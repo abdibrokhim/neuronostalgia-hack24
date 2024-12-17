@@ -73,14 +73,14 @@ export default function Home() {
                 </div>
             </section>
             <footer style={{ textAlign: 'center', marginTop: '30px', borderTop: '3px dotted #000', paddingTop: '10px' }}>
-                [<a href="/project/browserhack----revolutionizing-productivity-with-innovative-tools" style={{ color: '#f00' }}>
+                [<a href="/demo/project/browserhack----revolutionizing-productivity-with-innovative-tools" style={{ color: '#f00' }}>
                     <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/675c348375ac04ef915f8091_673715109f3ef9cfe2326596_67151330e6e7559ec09923bb_neuro_nostalgia%20(1)%20(1)%20(1).png" alt="" width={100} height={100} />
                 </a>]
                 <div style={{ marginTop: '20px', maxWidth: '640px', margin: 'auto', backgroundColor: '#ff0', padding: '10px', border: '2px solid #00f' }}>
                     <h3 style={{ fontSize: '28px', color: '#000' }}>BrowserHack — Revolutionizing Productivity With Innovative Tools</h3>
                     <p style={{ fontSize: '20px' }}>Hackathon | Social Impact</p>
                 </div>
-                [<a href="/project/neuro-nostalgia" style={{ color: '#f00' }}>
+                [<a href="/demo/project/neuro-nostalgia" style={{ color: '#f00' }}>
                     <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/67151330e6e7559ec09923bb_neuro_nostalgia%20(1).png" alt="" width={100} height={100} />
                 </a>]
                 <div style={{ marginTop: '20px', maxWidth: '640px', margin: 'auto', backgroundColor: '#0f0', padding: '10px', border: '2px solid #f00' }}>

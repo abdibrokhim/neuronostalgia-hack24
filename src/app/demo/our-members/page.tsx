@@ -29,7 +29,7 @@ export default function Home() {
                 </p>
             </div>
             <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                <a href="?17d73874_page=2" style={{ color: '#0000CD', textDecoration: 'underline' }}>Next</a>
+                <a href="#lol" style={{ color: '#0000CD', textDecoration: 'underline' }}>Next</a>
             </div>
         </div>
     );

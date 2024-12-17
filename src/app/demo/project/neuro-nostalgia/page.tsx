@@ -20,10 +20,10 @@ export default function Home() {
             <h2 style={{ marginTop: '20px', fontSize: '26px', background: '#00FFFF', padding: '10px' }}>Coming Soon. Stay tuned.</h2>
             <h2 style={{ marginTop: '40px', fontSize: '26px' }}>Related Works</h2>
             <div>
-                <a href="/project/browserhack----revolutionizing-productivity-with-innovative-tools"><Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/675c348375ac04ef915f8091_673715109f3ef9cfe2326596_67151330e6e7559ec09923bb_neuro_nostalgia%20(1)%20(1)%20(1).png" alt="BrowserHack" width={300} height={200} style={{ border: '4px solid #FF6600', margin: '10px' }} /></a>
+                <a href="/demo/project/browserhack----revolutionizing-productivity-with-innovative-tools"><Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/675c348375ac04ef915f8091_673715109f3ef9cfe2326596_67151330e6e7559ec09923bb_neuro_nostalgia%20(1)%20(1)%20(1).png" alt="BrowserHack" width={300} height={200} style={{ border: '4px solid #FF6600', margin: '10px' }} /></a>
                 <h3>BrowserHack — Revolutionizing Productivity With Innovative Tools</h3>
                 <p style={{ fontSize: '20px', color: '#FF00FF' }}>Hackathon, Social Impact</p>
-                <a href="/project/neuro-nostalgia"><Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/67151330e6e7559ec09923bb_neuro_nostalgia%20(1).png" alt="Neuro Nostalgia" width={300} height={200} style={{ border: '4px solid #0000CC', margin: '10px' }} /></a>
+                <a href="/demo/project/neuro-nostalgia"><Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/67151330e6e7559ec09923bb_neuro_nostalgia%20(1).png" alt="Neuro Nostalgia" width={300} height={200} style={{ border: '4px solid #0000CC', margin: '10px' }} /></a>
                 <h3>Neuro Nostalgia — AI-Powered Time Machine for Web Design</h3>
                 <p style={{ fontSize: '20px', color: '#FF00FF' }}>Hackathon, Content Tech</p>
             </div>

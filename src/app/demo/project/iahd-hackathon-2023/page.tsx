@@ -66,14 +66,14 @@ export default function Home() {
                 textAlign: 'center'
             }}>
                 <h2>Related Works</h2>
-                <a href="/project/browserhack----revolutionizing-productivity-with-innovative-tools">
+                <a href="/demo/project/browserhack----revolutionizing-productivity-with-innovative-tools">
                     <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/675c348375ac04ef915f8091_673715109f3ef9cfe2326596_67151330e6e7559ec09923bb_neuro_nostalgia%20(1)%20(1)%20(1).png" alt="browserhack" width={150} height={150} />
                 </a>
                 <br />
                 <h3>BrowserHack — Revolutionizing Productivity With Innovative Tools</h3>
                 <p>Hackathon</p>
                 <p>Social Impact</p>
-                <a href="/project/neuro-nostalgia">
+                <a href="/demo/project/neuro-nostalgia">
                     <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/67151330e6e7559ec09923bb_neuro_nostalgia%20(1).png" alt="neuro nostalgia" width={150} height={150} />
                 </a>
                 <br />

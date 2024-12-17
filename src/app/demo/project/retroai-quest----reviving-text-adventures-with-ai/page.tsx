@@ -46,7 +46,7 @@ export default function Home() {
             <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/670ce7366b5924e18644e6a9_2.png" alt="" width={300} height={300} />
             <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/670ce7365947824a1a9377a3_3%20(2).png" alt="" width={300} height={300} />
             <div style={{ margin: '40px 0' }}>
-                <a href="/project/browserhack----revolutionizing-productivity-with-innovative-tools">
+                <a href="/demo/project/browserhack----revolutionizing-productivity-with-innovative-tools">
                     <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/675c348375ac04ef915f8091_673715109f3ef9cfe2326596_67151330e6e7559ec09923bb_neuro_nostalgia%20(1)%20(1)%20(1).png" alt="" width={250} height={200} />
                 </a>
             </div>

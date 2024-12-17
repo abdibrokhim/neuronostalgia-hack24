@@ -67,12 +67,12 @@ export default function Home() {
             </div>
             <div style={{ textAlign: 'center', margin: '20px', padding: '20px', background: 'pink' }}>
                 <h4>Related Works</h4>
-                <a href="/project/browserhack----revolutionizing-productivity-with-innovative-tools">
+                <a href="/demo/project/browserhack----revolutionizing-productivity-with-innovative-tools">
                     <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/675c348375ac04ef915f8091_673715109f3ef9cfe2326596_67151330e6e7559ec09923bb_neuro_nostalgia%20(1)%20(1)%20(1).png" alt="BrowserHack" width={100} height={75} />
                 </a>
                 <h4>BrowserHack — Revolutionizing Productivity With Innovative Tools</h4>
                 <p>Hackathon, Social Impact</p>
-                <a href="/project/neuro-nostalgia">
+                <a href="/demo/project/neuro-nostalgia">
                     <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/67151330e6e7559ec09923bb_neuro_nostalgia%20(1).png" alt="Neuro Nostalgia" width={100} height={75} />
                 </a>
                 <h4>Neuro Nostalgia — AI-Powered Time Machine for Web Design</h4>

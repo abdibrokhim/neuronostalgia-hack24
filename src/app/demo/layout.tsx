@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "",
-  description: "",
+  title: "Hackathon Raptors – Uniting Innovators for Impactful Tech Challenges",
+  description: "Join Hackathon Raptors in pioneering tech solutions for global challenges. Participate in our hackathons, collaborate with experts, and drive meaningful change through technology. Let's innovate together!",
 };
 
 export default function RootLayout({

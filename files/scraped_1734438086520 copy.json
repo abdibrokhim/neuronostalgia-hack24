@@ -1,0 +1,724 @@
+{
+  "success": true,
+  "status": "completed",
+  "completed": 41,
+  "total": 41,
+  "creditsUsed": 41,
+  "expiresAt": "2024-12-18T12:21:08.000Z",
+  "data": [
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/browserhack----revolutionizing-productivity-with-innovative-tools",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/browserhack----revolutionizing-productivity-with-innovative-tools\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/fellow-membership",
+        "title": "Fellow Membership",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Fellow Membership",
+        "language": "en",
+        "og:title": "Fellow Membership",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/fellow-membership\r\n        ",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Fellow Membership",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/leadership-principles",
+        "title": "Leadership Principles",
+        "robots": "noindex",
+        "ogTitle": "Leadership Principles",
+        "language": "en",
+        "og:title": "Leadership Principles",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/leadership-principles\r\n        ",
+        "statusCode": 200,
+        "twitter:title": "Leadership Principles",
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/hackathon-raptors-2024-ai-powered-mental-health-support-chatbot",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/hackathon-raptors-2024-ai-powered-mental-health-support-chatbot\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog",
+        "title": "Raptors Blog",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Raptors Blog",
+        "language": "en",
+        "og:title": "Raptors Blog",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/blog\r\n        ",
+        "statusCode": 200,
+        "description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:title": "Raptors Blog",
+        "og:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values."
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/ai-storytellers-revolutionizing-narratives-and-media-hackathon",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/ai-storytellers-revolutionizing-narratives-and-media-hackathon\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/burning-heroes-artificial-intelligence-for-humanity-hackathon",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/burning-heroes-artificial-intelligence-for-humanity-hackathon\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/our-members",
+        "title": "Hackathon Raptors — Our Members",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors — Our Members",
+        "language": "en",
+        "og:title": "Hackathon Raptors — Our Members",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/our-members\r\n        ",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Hackathon Raptors — Our Members",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/bug-hunters",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/bug-hunters\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "",
+      "metadata": {
+        "url": "https://www.raptors.dev/",
+        "title": "Hackathon Raptors – Uniting Innovators for Impactful Tech Challenges",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors: Empowering Collaboration for Technological Breakthroughs",
+        "language": "en",
+        "og:title": "Hackathon Raptors: Empowering Collaboration for Technological Breakthroughs",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev\r\n        ",
+        "statusCode": 200,
+        "description": "Join Hackathon Raptors in pioneering tech solutions for global challenges. Participate in our hackathons, collaborate with experts, and drive meaningful change through technology. Let's innovate together!",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Dive into Hackathon Raptors' world of tech-driven innovation and altruism-centered events. Engage with a community of expert engineers driving societal progress through groundbreaking hackathons and collaborative projects.",
+        "twitter:title": "Hackathon Raptors: Empowering Collaboration for Technological Breakthroughs",
+        "og:description": "Dive into Hackathon Raptors' world of tech-driven innovation and altruism-centered events. Engage with a community of expert engineers driving societal progress through groundbreaking hackathons and collaborative projects.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Dive into Hackathon Raptors' world of tech-driven innovation and altruism-centered events. Engage with a community of expert engineers driving societal progress through groundbreaking hackathons and collaborative projects."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog?d762db64_page=0",
+        "title": "Raptors Blog",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Raptors Blog",
+        "language": "en",
+        "og:title": "Raptors Blog",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/blog?d762db64_page=0",
+        "statusCode": 200,
+        "description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:title": "Raptors Blog",
+        "og:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog/beyond-code-the-importance-of-non-technical-skills-in-hackathon-success",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/blog/beyond-code-the-importance-of-non-technical-skills-in-hackathon-success\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog/from-hackathon-to-social-impact-turning-ideas-into-sustainable-solutions",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/blog/from-hackathon-to-social-impact-turning-ideas-into-sustainable-solutions\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog/designing-altruistic-hackathons-for-socia-good",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/blog/designing-altruistic-hackathons-for-socia-good\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/humanizing-ai-text----blurring-the-lines-between-humans-and-machines",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/humanizing-ai-text----blurring-the-lines-between-humans-and-machines\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/our-members?17d73874_page=3",
+        "title": "Hackathon Raptors — Our Members",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors — Our Members",
+        "language": "en",
+        "og:title": "Hackathon Raptors — Our Members",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/our-members?17d73874_page=3",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Hackathon Raptors — Our Members",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog/mastering-hackathons-a-comprehensive-guide-to-success",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/blog/mastering-hackathons-a-comprehensive-guide-to-success\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog/impactful-challenges-how-hackathons-can-drive-real-world-change",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/blog/impactful-challenges-how-hackathons-can-drive-real-world-change\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/our-members?17d73874_page=10",
+        "title": "Hackathon Raptors — Our Members",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors — Our Members",
+        "language": "en",
+        "og:title": "Hackathon Raptors — Our Members",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/our-members?17d73874_page=10",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Hackathon Raptors — Our Members",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/neuro-nostalgia",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/neuro-nostalgia\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/interactive-educational-game-for-myap-ing",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/interactive-educational-game-for-myap-ing\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/our-members?17d73874_page=5",
+        "title": "Hackathon Raptors — Our Members",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors — Our Members",
+        "language": "en",
+        "og:title": "Hackathon Raptors — Our Members",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/our-members?17d73874_page=5",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Hackathon Raptors — Our Members",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/iahd-hackathon-2023",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/iahd-hackathon-2023\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog/positive-social-impact-of-global-hackathons",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/blog/positive-social-impact-of-global-hackathons\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/our-members?17d73874_page=4",
+        "title": "Hackathon Raptors — Our Members",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors — Our Members",
+        "language": "en",
+        "og:title": "Hackathon Raptors — Our Members",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/our-members?17d73874_page=4",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Hackathon Raptors — Our Members",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/",
+        "title": "Hackathon Raptors – Uniting Innovators for Impactful Tech Challenges",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors: Empowering Collaboration for Technological Breakthroughs",
+        "language": "en",
+        "og:title": "Hackathon Raptors: Empowering Collaboration for Technological Breakthroughs",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/",
+        "statusCode": 200,
+        "description": "Join Hackathon Raptors in pioneering tech solutions for global challenges. Participate in our hackathons, collaborate with experts, and drive meaningful change through technology. Let's innovate together!",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Dive into Hackathon Raptors' world of tech-driven innovation and altruism-centered events. Engage with a community of expert engineers driving societal progress through groundbreaking hackathons and collaborative projects.",
+        "twitter:title": "Hackathon Raptors: Empowering Collaboration for Technological Breakthroughs",
+        "og:description": "Dive into Hackathon Raptors' world of tech-driven innovation and altruism-centered events. Engage with a community of expert engineers driving societal progress through groundbreaking hackathons and collaborative projects.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Dive into Hackathon Raptors' world of tech-driven innovation and altruism-centered events. Engage with a community of expert engineers driving societal progress through groundbreaking hackathons and collaborative projects."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog?d762db64_page=2",
+        "title": "Raptors Blog",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Raptors Blog",
+        "language": "en",
+        "og:title": "Raptors Blog",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/blog?d762db64_page=2",
+        "statusCode": 200,
+        "description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:title": "Raptors Blog",
+        "og:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/our-members?17d73874_page=7",
+        "title": "Hackathon Raptors — Our Members",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors — Our Members",
+        "language": "en",
+        "og:title": "Hackathon Raptors — Our Members",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/our-members?17d73874_page=7",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Hackathon Raptors — Our Members",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/retroai-quest----reviving-text-adventures-with-ai",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/retroai-quest----reviving-text-adventures-with-ai\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/our-members?17d73874_page=11",
+        "title": "Hackathon Raptors — Our Members",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors — Our Members",
+        "language": "en",
+        "og:title": "Hackathon Raptors — Our Members",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/our-members?17d73874_page=11",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Hackathon Raptors — Our Members",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog?d762db64_page=1",
+        "title": "Raptors Blog",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Raptors Blog",
+        "language": "en",
+        "og:title": "Raptors Blog",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/blog?d762db64_page=1",
+        "statusCode": 200,
+        "description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:title": "Raptors Blog",
+        "og:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/our-members?17d73874_page=9",
+        "title": "Hackathon Raptors — Our Members",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors — Our Members",
+        "language": "en",
+        "og:title": "Hackathon Raptors — Our Members",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/our-members?17d73874_page=9",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Hackathon Raptors — Our Members",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/our-members?17d73874_page=1",
+        "title": "Hackathon Raptors — Our Members",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors — Our Members",
+        "language": "en",
+        "og:title": "Hackathon Raptors — Our Members",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/our-members?17d73874_page=1",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Hackathon Raptors — Our Members",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/our-members?17d73874_page=2",
+        "title": "Hackathon Raptors — Our Members",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors — Our Members",
+        "language": "en",
+        "og:title": "Hackathon Raptors — Our Members",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/our-members?17d73874_page=2",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Hackathon Raptors — Our Members",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/our-members?17d73874_page=0",
+        "title": "Hackathon Raptors — Our Members",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors — Our Members",
+        "language": "en",
+        "og:title": "Hackathon Raptors — Our Members",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/our-members?17d73874_page=0",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Hackathon Raptors — Our Members",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog?d762db64_page=3",
+        "title": "Raptors Blog",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Raptors Blog",
+        "language": "en",
+        "og:title": "Raptors Blog",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/blog?d762db64_page=3",
+        "statusCode": 200,
+        "description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:title": "Raptors Blog",
+        "og:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/our-members?17d73874_page=8",
+        "title": "Hackathon Raptors — Our Members",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors — Our Members",
+        "language": "en",
+        "og:title": "Hackathon Raptors — Our Members",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/our-members?17d73874_page=8",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Hackathon Raptors — Our Members",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog/efficient-methods-of-scientific-rigor-in-hackathon",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/blog/efficient-methods-of-scientific-rigor-in-hackathon\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog/the-power-of-collective-intelligence----leveraging-diverse-skills-in-hackathon-teams",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/blog/the-power-of-collective-intelligence----leveraging-diverse-skills-in-hackathon-teams\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/our-members?17d73874_page=6",
+        "title": "Hackathon Raptors — Our Members",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors — Our Members",
+        "language": "en",
+        "og:title": "Hackathon Raptors — Our Members",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/our-members?17d73874_page=6",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Hackathon Raptors — Our Members",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog?d762db64_page=4",
+        "title": "Raptors Blog",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Raptors Blog",
+        "language": "en",
+        "og:title": "Raptors Blog",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/blog?d762db64_page=4",
+        "statusCode": 200,
+        "description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:title": "Raptors Blog",
+        "og:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values."
+      }
+    }
+  ]
+}

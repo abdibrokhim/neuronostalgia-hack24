@@ -1,0 +1,385 @@
+Here's the JSON data that i scrape from internet. My current task is make a function or functions that will do the required job: 
+
+1) layoutGenerator that will generate "layout.tsx" inside each folder. simply reads the contents from "layout.txt" file then writes to "layout.tsx". 1.1.) "layout.tsx" title and description should be updated based on the scraped JSON data. for example: "title": "Fellow Membership", "description": "Our association's impact ... etc.",
+2) function that will create all the required folders. folder names should be exactly similar to the endpoints: everything that comes next this URL: "https://www.raptors.dev/<folder_name>". for example: "url": "https://www.raptors.dev/fellow-membership", here's folder_name="fellow-membership".
+3) function that will create "page.tsx" inside each folder gets string as an argument.
+4) make sure implement everything inside "page.tsx" to avoid any errors and issues during running process "npm run dev".
+5) make a function that finds markdown and returns it.
+
+Okay, the logic is very simple: we will firstly scrape the data and save in JSON file. Then we will generate folder names and track them in map (dictionary). Then we will go throw each and generate "layout.tsx" and save inside each folder. Then we will read markdown and pass to the "chatCompletion()" function to get the 90s styled website NextJS in string format and return it . Returned text we will pass to another function that will write inside "page.tsx" file and saves inside specific folder. Then we will loop the process till we read all markdown from JSON scraped data. 
+
+As we done with everything we should get the full functional Multi page website. the name of the parent folder is : "demo" and everything will be places inside it. for example: 
+
+demo/ (folder_name)
+--layout.tsx (file_name)
+--page.tsx (file_name)
+--fellow-membership/ (folder_name)
+----layout.tsx (file_name)
+----page.tsx (file_name)
+--leadership-principles/ (folder_name)
+----layout.tsx (file_name)
+----page.tsx (file_name)
+--our-members/ (folder_name)
+----layout.tsx (file_name)
+----page.tsx (file_name)
+--blog/ (folder_name)
+----layout.tsx (file_name)
+----page.tsx (file_name)
+--project/ (folder_name)
+----layout.tsx (file_name)
+----page.tsx (file_name)
+
+etc.
+
+
+{
+  "success": true,
+  "status": "completed",
+  "completed": 41,
+  "total": 41,
+  "creditsUsed": 41,
+  "expiresAt": "2024-12-18T12:21:08.000Z",
+  "data": [
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/browserhack----revolutionizing-productivity-with-innovative-tools",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/browserhack----revolutionizing-productivity-with-innovative-tools\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/fellow-membership",
+        "title": "Fellow Membership",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Fellow Membership",
+        "language": "en",
+        "og:title": "Fellow Membership",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/fellow-membership\r\n        ",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Fellow Membership",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/leadership-principles",
+        "title": "Leadership Principles",
+        "robots": "noindex",
+        "ogTitle": "Leadership Principles",
+        "language": "en",
+        "og:title": "Leadership Principles",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/leadership-principles\r\n        ",
+        "statusCode": 200,
+        "twitter:title": "Leadership Principles",
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/hackathon-raptors-2024-ai-powered-mental-health-support-chatbot",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/hackathon-raptors-2024-ai-powered-mental-health-support-chatbot\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog",
+        "title": "Raptors Blog",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Raptors Blog",
+        "language": "en",
+        "og:title": "Raptors Blog",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/blog\r\n        ",
+        "statusCode": 200,
+        "description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:title": "Raptors Blog",
+        "og:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values."
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/ai-storytellers-revolutionizing-narratives-and-media-hackathon",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/ai-storytellers-revolutionizing-narratives-and-media-hackathon\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/burning-heroes-artificial-intelligence-for-humanity-hackathon",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/burning-heroes-artificial-intelligence-for-humanity-hackathon\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/our-members",
+        "title": "Hackathon Raptors — Our Members",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors — Our Members",
+        "language": "en",
+        "og:title": "Hackathon Raptors — Our Members",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/our-members\r\n        ",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Hackathon Raptors — Our Members",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "<markdown will be here>",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/bug-hunters",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/bug-hunters\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "",
+      "metadata": {
+        "url": "https://www.raptors.dev/",
+        "title": "Hackathon Raptors – Uniting Innovators for Impactful Tech Challenges",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors: Empowering Collaboration for Technological Breakthroughs",
+        "language": "en",
+        "og:title": "Hackathon Raptors: Empowering Collaboration for Technological Breakthroughs",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev\r\n        ",
+        "statusCode": 200,
+        "description": "Join Hackathon Raptors in pioneering tech solutions for global challenges. Participate in our hackathons, collaborate with experts, and drive meaningful change through technology. Let's innovate together!",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Dive into Hackathon Raptors' world of tech-driven innovation and altruism-centered events. Engage with a community of expert engineers driving societal progress through groundbreaking hackathons and collaborative projects.",
+        "twitter:title": "Hackathon Raptors: Empowering Collaboration for Technological Breakthroughs",
+        "og:description": "Dive into Hackathon Raptors' world of tech-driven innovation and altruism-centered events. Engage with a community of expert engineers driving societal progress through groundbreaking hackathons and collaborative projects.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Dive into Hackathon Raptors' world of tech-driven innovation and altruism-centered events. Engage with a community of expert engineers driving societal progress through groundbreaking hackathons and collaborative projects."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog?d762db64_page=0",
+        "title": "Raptors Blog",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Raptors Blog",
+        "language": "en",
+        "og:title": "Raptors Blog",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/blog?d762db64_page=0",
+        "statusCode": 200,
+        "description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "twitter:title": "Raptors Blog",
+        "og:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog/beyond-code-the-importance-of-non-technical-skills-in-hackathon-success",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/blog/beyond-code-the-importance-of-non-technical-skills-in-hackathon-success\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog/from-hackathon-to-social-impact-turning-ideas-into-sustainable-solutions",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/blog/from-hackathon-to-social-impact-turning-ideas-into-sustainable-solutions\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog/designing-altruistic-hackathons-for-socia-good",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/blog/designing-altruistic-hackathons-for-socia-good\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/project/humanizing-ai-text----blurring-the-lines-between-humans-and-machines",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/project/humanizing-ai-text----blurring-the-lines-between-humans-and-machines\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/our-members?17d73874_page=3",
+        "title": "Hackathon Raptors — Our Members",
+        "robots": "noindex",
+        "og:type": "website",
+        "ogTitle": "Hackathon Raptors — Our Members",
+        "language": "en",
+        "og:title": "Hackathon Raptors — Our Members",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "https://www.raptors.dev/our-members?17d73874_page=3",
+        "statusCode": 200,
+        "description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:card": "summary_large_image",
+        "ogDescription": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "twitter:title": "Hackathon Raptors — Our Members",
+        "og:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
+        "ogLocaleAlternate": [],
+        "twitter:description": "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values."
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog/mastering-hackathons-a-comprehensive-guide-to-success",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/blog/mastering-hackathons-a-comprehensive-guide-to-success\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    },
+    {
+      "markdown": "markdown",
+      "metadata": {
+        "url": "https://www.raptors.dev/blog/impactful-challenges-how-hackathons-can-drive-real-world-change",
+        "title": "Hackathon Raptors",
+        "language": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "sourceURL": "\r\n            https://www.raptors.dev/blog/impactful-challenges-how-hackathons-can-drive-real-world-change\r\n        ",
+        "statusCode": 200,
+        "ogLocaleAlternate": []
+      }
+    }
+}
+
+
+
+// layout generator needs to be dynamic:
+
+export const layoutGenerator = async (filePath: string) => {
+    // simply read the file content from `filePath` and write to the `layout.tsx` file. save it in the same directory as `page.tsx`.
+    console.log("loading layoutGenerator...");
+    try {
+        console.log("====================================")
+        console.log("Opening file...")
+        
+        const fileContent = fs.readFileSync(filePath, 'utf8');
+        
+        console.log("====================================")
+        console.log("fileContent: ");
+        console.log(fileContent);
+
+        // Create the demo directory if it doesn't exist
+        const demoDir = path.join(process.cwd(), 'src', 'app', 'demo');
+        if (!fs.existsSync(demoDir)) {
+            fs.mkdirSync(demoDir, { recursive: true });
+        }
+
+        // Define the output file path
+        const outputPath = path.join(demoDir, 'layout.tsx');
+
+        // Write the response to the file
+        fs.writeFileSync(outputPath, fileContent, 'utf8');
+        console.log("====================================")
+        console.log("File written successfully to:", outputPath);
+
+        // Return the relative path from the project root
+        return path.relative(process.cwd(), outputPath);
+
+    } catch (error) {
+        console.error("Error fetching the data:", error);
+        return "An error occurred while fetching the data.";
+    }
+}
+
+
+// "page.tsx" creator:
+
+// Create the demo directory if it doesn't exist
+        const demoDir = path.join(process.cwd(), 'src', 'app', 'demo');
+        if (!fs.existsSync(demoDir)) {
+            fs.mkdirSync(demoDir, { recursive: true });
+        }
+
+        // Define the output file path
+        const outputPath = path.join(demoDir, 'page.tsx');
+
+        // remove first and last line
+        const processedMessages = removeFirstAndLastLines(responseMessages);
+
+        // Write the response to the file
+        fs.writeFileSync(outputPath, processedMessages!, 'utf8');
+        console.log("====================================")
+        console.log("File written successfully to:", outputPath);
+
+        // Return the relative path from the project root
+        return path.relative(process.cwd(), outputPath);

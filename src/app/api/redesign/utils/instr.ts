@@ -26,7 +26,7 @@ export const instr = `
     Strictly keep the imgae URLs as they are. Don't change the image URLs.
     Make sure to keep the navigation paths as they are. Don't change the navigation paths.
 
-    Always start with the following code:
+    Always start with the following code (SUPER STRICT):
 
     'use client';
 

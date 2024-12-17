@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "{{title}}",
-  description: "{{description}}",
+  title: "Raptors Blog",
+  description: "Our association's impact comes from the combined efforts of our members, who bring their skills and knowledge to support our shared values.",
 };
 
 export default function RootLayout({

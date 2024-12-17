@@ -1,0 +1,10 @@
+idea is very simple. when we crawl the website, 
+we will save each crawled page to a separate file with respective names.
+so we can easily setup navigation between pages. as nextjs routing mechanism.
+
+then we will process each file with gpt and generate a new page.tsx file.
+autogenerate layout.tsx for each page.tsx file.
+
+notes:
+remove duplicates, sometimes crawler will crawl the same page multiple times.
+

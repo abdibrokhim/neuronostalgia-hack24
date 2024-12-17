@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "{{title}}",
-  description: "{{description}}",
+  title: "Fellow Membership",
+  description: "Our association's impact is driven by the collective efforts of our members, who contribute their skills and knowledge to our shared values.",
 };
 
 export default function RootLayout({

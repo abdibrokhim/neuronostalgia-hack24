@@ -20,6 +20,7 @@ export default function Home() {
     scrapedSuccess: 'Website scraped successfully.',
     redesignSuccess: 'Website redesigned successfully.',
   }
+  // const [scrapedDataFilePath, setScrapedDataFilePath] = useState<string | null>("files/scraped_1734447602439.json"); // uncomment this line for testing the redesign feature without crawling
   const [scrapedDataFilePath, setScrapedDataFilePath] = useState<string | null>(null);
   const [redesignedFolderPath, setRedesignedFolderPath] = useState<string | null>(null);
   const scrapeStates = {
@@ -61,9 +62,15 @@ export default function Home() {
 
       if (response.ok) {
           setNotification({ message: messages.crawledSuccess, type: 'success' });
-          const scrapedData = data.crawlResponse;
+          const scrapedDataMsg = data.message;
+          const scrapedDataFilePath = data.jsonFilePath;
           console.log("====================================")
-          console.log('Crawled data:', scrapedData);
+          console.log(scrapedDataMsg);
+          console.log('Crawled data saved at:', scrapedDataFilePath);
+
+          // Crawled data saved at: /Users/abdibrokhim/VSCode/projects/retroed/files/scraped_1734447602439.json
+
+          setScrapedDataFilePath(scrapedDataFilePath);
       } else {
           setNotification({ message: data.error || 'An unexpected error occurred.', type: 'error' });
       }
@@ -126,7 +133,7 @@ export default function Home() {
       const response = await fetch('/api/redesign', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ filePath: scrapedDataFilePath }),
+          body: JSON.stringify({ filePath: scrapedDataFilePath, ptype: pageCount }),
       });
 
       const data = await response.json();
@@ -135,7 +142,7 @@ export default function Home() {
           setNotification({ message: messages.redesignSuccess, type: 'success' });
           const newwebsitepath = data.newwebsitepath;
           console.log("====================================")
-          console.log('Website redesigned at:', newwebsitepath);
+          console.log('Website redesigned inside folder=', newwebsitepath);
           setRedesignedFolderPath(newwebsitepath);
       } else {
           setNotification({ message: data.error || 'An unexpected error occurred.', type: 'error' });
@@ -261,7 +268,7 @@ export default function Home() {
           {redesignedFolderPath && (
             <div className="w-full max-w-3xl mx-auto flex flex-col items-center p-4 mb-8 shadow-lg gap-4 bg-[var(--bg-a)] rounded-full">
               <a
-                href={redesignedFolderPath}
+                href={redesignedFolderPath!}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center py-2 px-4 sm:px-8 text-sm md:text-sm rounded-full shadow transition-colors bg-[var(--violet)] hover:bg-[var(--ring)] text-[var(--text-a)]"

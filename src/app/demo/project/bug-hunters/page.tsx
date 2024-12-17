@@ -5,34 +5,36 @@ import React, { useEffect, useState } from 'react';
 
 export default function Home() {
     return (
-        <div style={{ backgroundColor: '#ffcc00', color: '#000', fontFamily: 'Comic Sans MS, sans-serif', textAlign: 'center', padding: '10px' }}>
-            <div style={{ border: '5px dashed #ff69b4', margin: '20px', padding: '20px' }}>
-                <img src="https://cdn.prod.website-files.com/65de32a4db6b43b048630aef/65de32a5db6b43b048630b66_hover-arrow.svg" alt="" />
-                <h1 style={{ fontSize: '5em', backgroundColor: '#00ffff' }}>Bug Hunters — QA Hackathon for All Tech Enthusiasts</h1>
-                <h3 style={{ fontSize: '2em' }}>Quality Assurance Mastery: Advanced Bug Detection Challenge</h3>
-                <p style={{ fontSize: '1.5em', backgroundColor: '#ff69b4', padding: '10px' }}>Date: <b>Nov 2024</b></p>
-                <p style={{ fontSize: '1.5em', backgroundColor: '#00ffff', padding: '10px' }}>Client: <b>Raptors</b></p>
-                <p style={{ fontSize: '1.5em', backgroundColor: '#ff69b4', padding: '10px' }}>Website: <a href="https://qahack.net/" style={{ color: '#0000ff', textDecoration: 'none' }}>qahack.net</a></p>
-                <p style={{ fontSize: '1.5em', backgroundColor: '#00ffff', padding: '10px' }}>Category: <b>Hackathon, QA</b></p>
-                <p style={{ fontSize: '2em', marginTop: '30px' }}>Stay tuned.</p>
+        <div style={{ backgroundColor: '#ffeb3b', color: '#000080', fontFamily: 'Comic Sans MS, Comic Sans, cursive', textAlign: 'center', padding: '20px', fontSize: '16px' }}>
+            <h1 style={{ backgroundColor: '#ff69b4', padding: '10px' }}>Bug Hunters — QA Hackathon for All Tech Enthusiasts</h1>
+            <h2 style={{ color: '#ff4500', backgroundColor: '#87cefa', padding: '8px' }}>Quality Assurance Mastery: Advanced Bug Detection Challenge</h2>
+            <ul style={{ listStyleType: 'circle', textAlign: 'left', margin: '0 auto', width: 'fit-content' }}>
+                <li><strong>Date:</strong> Nov 2024</li>
+                <li><strong>Client:</strong> Raptors</li>
+                <li><strong>Website:</strong> <a href="https://qahack.net/" style={{ color: '#0000ee' }}>qahack.net</a></li>
+                <li><strong>Category:</strong> Hackathon, QA</li>
+            </ul>
+            <br />
+            <div>
+                <b style={{ backgroundColor: '#ffe135', padding: '5px' }}>Stay tuned.</b>
             </div>
-            <div style={{ border: '5px solid #ff69b4', margin: '20px', padding: '20px' }}>
-                <h2 style={{ fontSize: '3em', backgroundColor: '#00ff00' }}>Related Works</h2>
+            <h3 className="related-works" style={{ marginTop: '20px', paddingBottom: '10px', borderBottom: '2px dashed #ff6347' }}>Related Works</h3>
+            <div className="project" style={{ margin: '20px 0' }}>
                 <a href="/project/browserhack----revolutionizing-productivity-with-innovative-tools">
-                    <img src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/675c348375ac04ef915f8091_673715109f3ef9cfe2326596_67151330e6e7559ec09923bb_neuro_nostalgia%20(1)%20(1)%20(1).png" alt="" style={{ width: '300px', height: 'auto', backgroundColor: '#ff00ff', padding: '10px' }} />
+                    <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/675c348375ac04ef915f8091_673715109f3ef9cfe2326596_67151330e6e7559ec09923bb_neuro_nostalgia%20(1)%20(1)%20(1).png" alt="BrowserHack" width={150} height={150} />
+                    <h4 style={{ color: '#ff1493', backgroundColor: '#adff2f', padding: '5px' }}>BrowserHack — Revolutionizing Productivity With Innovative Tools</h4>
                 </a>
-                <h3 style={{ fontSize: '3em', backgroundColor: '#00ff00' }}>BrowserHack — Revolutionizing Productivity With Innovative Tools</h3>
-                <p style={{ fontSize: '2em', backgroundColor: '#ff00ff', padding: '10px' }}>Hackathon, Social Impact</p>
-                <a href="/project/neuro-nostalgia">
-                    <img src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/67151330e6e7559ec09923bb_neuro_nostalgia%20(1).png" alt="" style={{ width: '300px', height: 'auto', backgroundColor: '#ff00ff', padding: '10px' }} />
-                </a>
-                <h3 style={{ fontSize: '3em', backgroundColor: '#00ff00' }}>Neuro Nostalgia — AI-Powered Time Machine for Web Design</h3>
-                <p style={{ fontSize: '2em', backgroundColor: '#ff00ff', padding: '10px' }}>Hackathon, Content Tech</p>
+                <p style={{ fontSize: '14px' }}>Hackathon, Social Impact</p>
             </div>
-            <div style={{ backgroundColor: '#00ffff', padding: '10px', margin: '20px', fontSize: '2em' }}>
-                <a href="/#contact" style={{ color: '#ff0000', textDecoration: 'none' }}>
-                    <b>Get in Touch — Get in Touch — Get in Touch — Get in Touch — Get in Touch — Get in Touch —</b>
+            <div className="project" style={{ margin: '20px 0' }}>
+                <a href="/project/neuro-nostalgia">
+                    <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/67151330e6e7559ec09923bb_neuro_nostalgia%20(1).png" alt="Neuro Nostalgia" width={150} height={150} />
+                    <h4 style={{ color: '#ff1493', backgroundColor: '#adff2f', padding: '5px' }}>Neuro Nostalgia — AI-Powered Time Machine for Web Design</h4>
                 </a>
+                <p style={{ fontSize: '14px' }}>Hackathon, Content Tech</p>
+            </div>
+            <div style={{ borderTop: '2px dotted #4b0082', paddingTop: '10px' }}>
+                <a href="/#contact" style={{ textDecoration: 'none', color: '#00f' }}><marquee behavior="scroll" direction="left">Get in Touch – Get in Touch – Get in Touch – Get in Touch – Get in Touch – Get in Touch – Get in Touch – Get in Touch –</marquee></a>
             </div>
         </div>
     );

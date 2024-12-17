@@ -5,57 +5,55 @@ import React, { useEffect, useState } from 'react';
 
 export default function Home() {
     return (
-        <div style={{ backgroundColor: '#E0E4CC', color: '#663399', fontFamily: `'Comic Sans MS', cursive, sans-serif`, padding: '20px' }}>
-            <Image src="https://cdn.prod.website-files.com/65de32a4db6b43b048630aef/65de32a5db6b43b048630b66_hover-arrow.svg" alt="Arrow" width={50} height={50} style={{ display: 'block', margin: '0 auto' }} />
-            <h1 style={{ textAlign: 'center', backgroundColor: '#A7DBD8', padding: '10px' }}>Artificial Intelligence Hype — Mental Health Support Chatbot Hackathon</h1>
-            <marquee behavior="scroll" direction="left" style={{ backgroundColor: '#F38630', color: '#fff', padding: '10px' }}>AI Minds, Human Hearts: Mental Wellness Hackathon</marquee>
-            <div style={{ margin: '20px auto', width: '80%', backgroundColor: '#FA6900', padding: '10px', border: '3px dashed #FFF' }}>
-                <h5>Date: Jun 2024</h5>
-                <h5>Client: Hackathon Raptors</h5>
-                <h5>Website: <a href="http://hackformental.com" style={{ color: '#fff' }}>hackformental.com</a></h5>
-                <h5>Category: Hackathon, Health Tech</h5>
+        <div style={{ margin: '0 auto', padding: '20px', maxWidth: '800px', backgroundColor: '#FFCC00', border: '3px solid #CC0000', fontFamily: 'Courier New, Courier, monospace', color: '#3300FF', textAlign: 'center' }}>
+            <div>
+                <Image src="https://cdn.prod.website-files.com/65de32a4db6b43b048630aef/65de32a5db6b43b048630b66_hover-arrow.svg" alt="" width={50} height={50} />
             </div>
-            <section style={{ backgroundColor: '#FFD700', padding: '15px', margin: '20px 0', border: '2px solid #000' }}>
-                <h2>Mental Well-being: Coding Compassion</h2>
-                <p>Hackathon Raptors announces the successful completion of our <strong>AI Mental Wellness Chatbot Hackathon</strong>. The event brought together tech innovators to develop empathetic AI chatbots for mental health support.</p>
-                <h4>✯ Global Participation and Creative Synergy</h4>
-                <p>International participants collaborated virtually to create innovative mental wellness chatbots. Solutions ranged from AI emotional support systems to comprehensive wellness platforms, blending technical skill with compassion.</p>
-                <h4>✯ Highlighted Projects and Winners:</h4>
-                <ul>
-                    <li><strong>Wendy</strong> — GPT-4 Telegram bot for empathetic conversations. Personalized, efficient, with detailed implementation.</li>
-                    <li><strong>Mental AI</strong> — Real-time voice assistance for mental health. Collaborates with psychologists, uses innovative prompts.</li>
-                    <li><strong>MeWellAI</strong> — Platform with specialized AI agents for various concerns. Offers AI content, community features, and courses.</li>
+            <h1 style={{ fontSize: '36px', color: '#660033' }}>Artificial Intelligence Hype — Mental Health Support Chatbot Hackathon</h1>
+            <h2 style={{ fontSize: '28px', color: '#006600' }}>AI Minds, Human Hearts: Mental Wellness Hackathon</h2>
+            <ul style={{ listStyleType: 'disc', padding: '0 20px', textAlign: 'left' }}>
+                <li style={{ fontSize: '20px' }}>Date: Jun 2024</li>
+                <li style={{ fontSize: '20px' }}>Client: Hackathon Raptors</li>
+                <li style={{ fontSize: '20px' }}>Website: <a href="http://hackformental.com" style={{ color: '#CC00CC', textDecoration: 'none' }}>hackformental.com</a></li>
+                <li style={{ fontSize: '20px' }}>Category: Hackathon, Health Tech</li>
+            </ul>
+            <section style={{ marginTop: '30px' }}>
+                <h3 style={{ fontSize: '24px', color: '#663399' }}>Mental Well-being: Coding Compassion</h3>
+                <p style={{ fontSize: '18px' }}>Hackathon Raptors announces the successful completion of our <strong>AI Mental Wellness Chatbot Hackathon</strong>. The event brought together tech innovators to develop empathetic AI chatbots for mental health support.</p>
+            </section>
+            <section style={{ marginTop: '30px' }}>
+                <h4 style={{ fontSize: '22px', color: '#CC6600' }}>✯ Global Participation and Creative Synergy</h4>
+                <p style={{ fontSize: '18px' }}>International participants collaborated virtually to create innovative mental wellness chatbots. Solutions ranged from AI emotional support systems to comprehensive wellness platforms, blending technical skill with compassion.</p>
+            </section>
+            <section style={{ marginTop: '30px' }}>
+                <h4 style={{ fontSize: '22px', color: '#FF0066' }}>✯ Highlighted Projects and Winners:</h4>
+                <ul style={{ listStyleType: 'square', padding: '0 20px', textAlign: 'left' }}>
+                    <li style={{ fontSize: '18px' }}><strong>Wendy</strong> — GPT-4 Telegram bot for empathetic conversations. Personalized, efficient, with detailed implementation.</li>
+                    <li style={{ fontSize: '18px' }}><strong>Mental AI</strong> — Real-time voice assistance for mental health. Collaborates with psychologists, uses innovative prompts.</li>
+                    <li style={{ fontSize: '18px' }}><strong>MeWellAI</strong> — Platform with specialized AI agents for various concerns. Offers AI content, community features, and courses.</li>
                 </ul>
-                <h4>✯ Celebrating Excellence</h4>
-                <p>This year's hackathon spotlighted thoughtful, innovative, and flawlessly executed projects. We congratulate all our participants, particularly Wendy, Mental AI, and MeWellAI, for their outstanding contributions to mental wellness support.</p>
-                <h4>✯ Judge's Laudatory Comments</h4>
-                <blockquote>
-                    <p><strong>Relevance to the Topic</strong> — "_MeWellAI stood out in correspondence to the task, enabling users to pick feedback that's most effective for them._" — Rodrigo Segnini</p>
-                    <p><strong>Innovative Problem-Solving</strong> — "_Mental AI's inclusion of voice messages and emotional inputs signifies an advancement in user interaction._" — Xin Hu</p>
-                    <p><strong>Code Quality</strong> — "_Wendy's project was well-detailed and showed a clear demonstration of product functionality._" — Iuliia Kozlova</p>
-                </blockquote>
             </section>
-            <div style={{ textAlign: 'center', margin: '30px 0' }}>
-                <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/66ab5a9923dfc514a2132207_23.png" alt="Image1" width={200} height={150} />
-                <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/66ab5a992bacf91adbe69427_22.png" alt="Image2" width={200} height={150} />
-                <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/66ab5a991264581e96180f94_21.png" alt="Image3" width={200} height={150} />
+            <section style={{ marginTop: '30px' }}>
+                <h4 style={{ fontSize: '22px', color: '#FF3399' }}>✯ Celebrating Excellence</h4>
+                <p style={{ fontSize: '18px' }}>This year's hackathon spotlighted thoughtful, innovative, and flawlessly executed projects. We congratulate all our participants, particularly Wendy, Mental AI, and MeWellAI, for their outstanding contributions to mental wellness support.</p>
+            </section>
+            <section style={{ marginTop: '30px' }}>
+                <h4 style={{ fontSize: '22px', color: '#6633FF' }}>✯ Judge's Laudatory Comments</h4>
+                <ul style={{ listStyleType: 'circle', padding: '0 20px', textAlign: 'left' }}>
+                    <li style={{ fontSize: '18px' }}><strong>Relevance to the Topic</strong> — "<i>MeWellAI stood out in correspondence to the task, enabling users to pick feedback that's most effective for them.</i>" — Rodrigo Segnini</li>
+                    <li style={{ fontSize: '18px' }}><strong>Innovative Problem-Solving</strong> — "<i>Mental AI's inclusion of voice messages and emotional inputs signifies an advancement in user interaction.</i>" — Xin Hu</li>
+                    <li style={{ fontSize: '18px' }}><strong>Code Quality</strong> — "<i>Wendy's project was well-detailed and showed a clear demonstration of product functionality.</i>" — Iuliia Kozlova</li>
+                </ul>
+            </section>
+            <div style={{ marginTop: '40px' }}>
+                <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/66ab5a9923dfc514a2132207_23.png" alt="" width={60} height={60} />
+                <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/66ab5a992bacf91adbe69427_22.png" alt="" width={60} height={60} />
+                <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/66ab5a991264581e96180f94_21.png" alt="" width={60} height={60} />
             </div>
-            <h3 style={{ textAlign: 'center', backgroundColor: '#69D2E7', padding: '10px', fontSize: '24px' }}>Stay tuned.</h3>
-            <section style={{ margin: '20px 0' }}>
-                <h3 style={{ backgroundColor: '#C02942', color: '#FFF', padding: '10px' }}>Related Works</h3>
-                <a href="/project/browserhack----revolutionizing-productivity-with-innovative-tools" style={{ display: 'block', textAlign: 'center', margin: '10px 0' }}>
-                    <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/675c348375ac04ef915f8091_673715109f3ef9cfe2326596_67151330e6e7559ec09923bb_neuro_nostalgia%20(1)%20(1)%20(1).png" alt="Project 1" width={300} height={200} />
-                    <h4>BrowserHack — Revolutionizing Productivity With Innovative Tools</h4>
-                </a>
-                <p style={{ textAlign: 'center', color: '#F38630' }}>Hackathon, Social Impact</p>
-                <a href="/project/neuro-nostalgia" style={{ display: 'block', textAlign: 'center', margin: '10px 0' }}>
-                    <Image src="https://cdn.prod.website-files.com/65de32a5db6b43b048630b6a/67151330e6e7559ec09923bb_neuro_nostalgia%20(1).png" alt="Project 2" width={300} height={200} />
-                    <h4>Neuro Nostalgia — AI-Powered Time Machine for Web Design</h4>
-                </a>
-                <p style={{ textAlign: 'center', color: '#F38630' }}>Hackathon, Content Tech</p>
-            </section>
-            <div style={{ backgroundColor: '#F38630', padding: '30px', borderTop: '5px outset #000', textAlign: 'center' }}>
-                <a href="/#contact" style={{ display: 'block', color: '#fff', fontSize: '20px', padding: '5px', textDecoration: 'none' }}>Get in Touch – Get in Touch – Get in Touch –</a>
+            <div style={{ marginTop: '30px', backgroundColor: '#99CCFF', padding: '10px', border: '2px dashed #0033CC' }}>
+                <h5 style={{ fontSize: '20px' }}><a href="/#contact" style={{ color: '#FF33CC', textDecoration: 'none' }}>Get in Touch</a> – <a href="/#contact" style={{ color: '#FF33CC', textDecoration: 'none' }}>Get in Touch</a> – <a href="/#contact" style={{ color: '#FF33CC', textDecoration: 'none' }}>Get in Touch</a></h5>
+                <h5 style={{ fontSize: '20px' }}><a href="/#contact" style={{ color: '#FF33CC', textDecoration: 'none' }}>Get in Touch</a> – <a href="/#contact" style={{ color: '#FF33CC', textDecoration: 'none' }}>Get in Touch</a> – <a href="/#contact" style={{ color: '#FF33CC', textDecoration: 'none' }}>Get in Touch</a></h5>
+                <h5 style={{ fontSize: '20px' }}><a href="/#contact" style={{ color: '#FF33CC', textDecoration: 'none' }}>Get in Touch</a> – <a href="/#contact" style={{ color: '#FF33CC', textDecoration: 'none' }}>Get in Touch</a> – <a href="/#contact" style={{ color: '#FF33CC', textDecoration: 'none' }}>Get in Touch</a></h5>
             </div>
         </div>
     );

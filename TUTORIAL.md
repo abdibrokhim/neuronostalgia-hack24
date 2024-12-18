@@ -1,7 +1,7 @@
 # Building a tool that transforms modern websites into authentic 90s-style designs while preserving core functionality using AI/ML API
 
 <details>
-<summary>⬇️ Table of Contents ⬇️</summary>
+<summary>⬇️ Table of Contents ⬇️</summary> (will be updated soon)
 
 - [Introduction](#introduction)
   - [AI/ML API](#aiml-api)
@@ -27,7 +27,9 @@ Hey, hey! 👋
 
 Wassap?!
 
-I was sitting in the lecture but it was too boring. Then, I prompt ChatGPT what to do. LOL. And, it said: "make something cool, but worst at the same time". So, I came up with this idea. Let's build a platform that transforms modern websites into authentic 90s-style designs while preserving core functionality. 😂 LMAO.
+I was sitting in the lecture but it was too boring. I left the room. Then, I prompt ChatGPT what to do. LOL. And, it said: "make something cool, but worst at the same time". So, I came up with this idea. Let's build a platform that transforms modern websites into authentic 90s-style designs while preserving core functionality. 😂 LMAO.
+
+![Me Coding](public/images/me-coding.jpg)
 
 Interesting? 
 
@@ -780,7 +782,8 @@ import path from 'path';
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
+    baseUrl: "https://api.aimlapi.com/chat/completions",
+    apiKey: process.env.AIML_API_KEY,
     dangerouslyAllowBrowser: true,
 });
 
@@ -1072,7 +1075,8 @@ import path from 'path';
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
+    baseUrl: "https://api.aimlapi.com/chat/completions",
+    apiKey: process.env.AIML_API_KEY,
     dangerouslyAllowBrowser: true,
 });
 
@@ -1371,7 +1375,7 @@ I streamed the whole process here on my Twitch channel. You can watch the record
 
 [![Watch on Twitch](public/assets/767351_twitch_christmas_stream_icon.png)](https://www.twitch.tv/videos/2329114716)
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch%20on-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/_wTaMLL4by0?si=nvSbaOktXjk3aw7l)
+[![Watch on YouTube](public/assets/767354_youtube_icon.png)](https://youtu.be/_wTaMLL4by0?si=nvSbaOktXjk3aw7l)
 
 
 ## Further Improvements
@@ -1398,6 +1402,8 @@ All the code for this project is available on GitHub. It's Open Source 🌟. [AI
 Save this tutorial for later reference: 
 - it's always available on [Medium](https://medium.com/@abdibrokhim/building-a-tool-that-transforms-modern-websites-into-authentic-90s-style-designs-while-preserving-95a835b5b7a0) 
 - and [Dev Community](https://dev.to/abdibrokhim/building-a-tool-that-transforms-modern-websites-into-authentic-90s-style-designs-using-aiml-api-5ame) of course for FREE! 🎉
+
+( ps: this AI project submitted for [neuronostalgia](https://neuronostalgia.com/) hackathon. [raptors](https://www.raptors.dev/) )
 
 ### Other interesting tutorials:
 *with step-by-step explanations and screenshots:*
@@ -1443,11 +1449,19 @@ Not a subscriber? Download your Loom Videos for free using [lovido.lol](https://
 
 Recently i applied for YC Winter 25 batch with my startup [PaperAI](https://paperai.pro). Here's the [Founders video](https://youtu.be/wCyJrv9a2Ic?si=zAS6lbocM5bt2OXl). It's a 2-minute video. I hope you enjoy it. 🚀 
 
-However, for [Uncensored] one [Check this video](https://www.patreon.com/collection/861737) .
+However, for [Uncensored] version head over here; [Check this video](https://www.patreon.com/collection/861737) .
+
+![YC reject 2](public/images/yc-reject-2.png)
+
+LOL, YC rejected me. But, i'm still building cool stuff. 🦄
 
 World’s 1st AI Startup Studio Album. Listen [on Patreon](https://www.patreon.com/collection/897243) or [on YouTube](https://www.youtube.com/@theopencommunity) .
 
 Whether you need help with… ( you name it, 🤓 lol ). I’m here to support you. [Book a Call or DM me](https://topmate.io/abdibrokhim/1291447) .
+
+![Top 1%](public/images/top1.jpg)
+
+( ps: i'm top 1% on [Topmate](https://topmate.io/abdibrokhim) )
 
 Tutorial written by [Ibrohim Abdivokhidov](https://www.linkedin.com/in/abdibrokhim/) .
 
@@ -1470,9 +1484,9 @@ Latest tutorial:
 
 📌 In this tutorial we'll building a web app, [AI Coding Interviewer](https://github.com/abdibrokhim/ai-coding-interviewer) ( e.g., PrepAlly ) that helps candidates prepare for coding interviews. [Start Building Stuff](https://github.com/abdibrokhim/ai-coding-interviewer)
 
-Learn to build real stuff using AI and 10+ tools, spelled out. 🤯
+Learn to build real stuff using AI and 10+ tools, spelled out. 🤯 [on [Dev.to Community](https://medium.com/@abdibrokhim/who-is-ibrohim-abdivokhidov-abdibrokhim-9d29fb52cb2b)].
 
-Here only on Open Community:
+Follow Open Community:
 - Website: https://theopencommunity.co 
 - LinkedIn: https://linkedin.com/company/opencommunity 
 - X: https://x.com/xopencommunity 
@@ -1480,8 +1494,10 @@ Here only on Open Community:
 - YouTube: https://youtube.com/@theopencommunity 
 - Instagram: https://instagram.com/theopencommunity 
 
-Learn whats comin' up next, because [imcook.in](https://imcook.in) something cool.
+Whats comin' up next? Follow me https://www.linkedin.com/in/abdibrokhim/ , [imcook.in](https://imcook.in) something cool.
 
 Leave your feedbacks, reactions, and comments on this [LinkedIn post]()
 
 [Edit this page on GitHub](https://github.com/abdibrokhim/neuronostalgia-hack24/blob/main/TUTORIAL.md)
+
+![TYSM](public/images/tysm.png)

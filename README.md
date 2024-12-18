@@ -1,20 +1,12 @@
 # make your website retired. LOL
 
-# PrepAlly
+![Testing](public/images/full-app-ui.png)
 
-We’re building PrepAlly to fill a critical gap in coding interview preparation. Current tools offer practice but fall short of providing the interactive, AI-driven insights candidates need to feel truly prepared. Interviews are still notoriously stressful, leaving candidates feeling unprepared despite available resources. PrepAlly changes that by delivering real-time feedback and personalized insights, empowering candidates with the confidence and readiness to ace their interviews.
+### Stream: Live on Twitch
 
-## 🚀 Watch on YouTube
+I streamed the whole process here on my Twitch channel. You can watch the recording here:
 
-Why PrepAlly?
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch%20on-YouTube-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/embed/qebSzqR7Tq4?si=XXzfDmVjGbIVdOQw)
-
-How to use PrepAlly?
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch%20on-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/wyp8tRTLLfQ?si=_YlCvJxtUVzhykXk)
-
-## 🎨 A couple of screenshots
+[![Watch on Twitch](public/assets/767351_twitch_christmas_stream_icon.png)](https://www.twitch.tv/videos/2329114716) [![Watch on YouTube](public/assets/767354_youtube_icon.png)](https://youtu.be/_wTaMLL4by0?si=nvSbaOktXjk3aw7l)
 
 
 ### Try it now -> [click me...](https://theopencommunity.co) (it's absolutely FREE! 🎉)
@@ -58,8 +50,6 @@ All tutorials available here:
 * Medium: https://medium.com/@abdibrokhim 
 * Dev: https://dev.to/abdibrokhim
 
-` the only thing that he cares about is what the world thinks of him because he's a narcissist `
-
 Join us! Open Community:
 * LinkedIn: https://linkedin.com/company/opencommunity
 * X: https://x.com/@xopencommunity
@@ -86,3 +76,9 @@ Become a [Patron](https://www.patreon.com/abdibrokhim). follow on [LinkedIn](htt
 ## 🦄 Want to learn build stuff?
 
 Whether you need help with… ( you name it, 🤓 lol ). I’m here https://topmate.io/abdibrokhim to support you.
+
+Leave your feedbacks, reactions, and comments on this [LinkedIn post]()
+
+tysm,
+
+![TYSM](public/images/tysm.png)

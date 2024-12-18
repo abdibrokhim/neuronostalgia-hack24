@@ -1377,6 +1377,11 @@ I streamed the whole process here on my Twitch channel. You can watch the record
 
 [![Watch on YouTube](public/assets/767354_youtube_icon.png)](https://youtu.be/_wTaMLL4by0?si=nvSbaOktXjk3aw7l)
 
+### Example: Scraped and Redesigned Website
+
+Here's an example of a modern website transformed into a 90s-style design using the AI-Powered Time Machine for Web Design. Kindly check the `src/app/demo` folder for the transformed website. It has bunch of folders and files. To see it just tun the app and put `/demo` after the URL. For example: `http://localhost:3000/demo`.
+
+![Transformed Website](public/images/raptors-lol.png)
 
 ## Further Improvements
 
@@ -1499,5 +1504,7 @@ Whats comin' up next? Follow me https://www.linkedin.com/in/abdibrokhim/ , [imco
 Leave your feedbacks, reactions, and comments on this [LinkedIn post]()
 
 [Edit this page on GitHub](https://github.com/abdibrokhim/neuronostalgia-hack24/blob/main/TUTORIAL.md)
+
+tysm,
 
 ![TYSM](public/images/tysm.png)

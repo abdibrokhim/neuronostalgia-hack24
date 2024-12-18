@@ -74,6 +74,8 @@ Key Features for Developers:
 * Developer-Friendly Integration: RESTful APIs and SDKs for seamless incorporation into your stack. 🛠️
 * Serverless Architecture: Focus on coding, not infrastructure management. ☁️
 
+![AIML API](public/images/aimlapi.png)
+
 [Get Started for FREE](https://aimlapi.com/?via=ibrohim) 🧑‍🍳
 
 Use the code `IBROHIMXAIMLAPI` for [1 week FREE Access](https://aimlapi.com/?via=ibrohim)
@@ -88,7 +90,7 @@ Firecrawl turns entire websites into clean, LLM-ready markdown or structured dat
 
 Key Features for Developers:
 
-![Firecrawl](public/images/firecrawl.png)
+![Firecrawl](public/images/firecrawl-feat.png)
 
 Documentation: [Firecrawl](https://docs.firecrawl.dev/introduction)
 
@@ -575,8 +577,746 @@ const redesignWebsite = async () => {
 The `redesignWebsite` function will send a `POST` request to the `/api/redesign` endpoint with the scraped data file path and the page count. It will then display a notification based on the response from the server. From the response, it will set the `redesignedFolderPath` state with the folder path of the redesigned website. ( spoiler; it's always `demo` folder ).
 
 
+Belive or not, we have done with UI. Congrats! 🎉
 
 ### API Routes
+
+We came to the most interesting part. The core of the app. The API routes and functionalities behind the scene.
+
+Let's implement the API routes. We need three API routes: `scrape`, `firecrawl`, and `redesign` with few helper functions. Helper functions will help us to properly handle the data, clean it, setup the folder and files.
+
+#### Firecrawl: Scrape API
+
+Create a new folder `scrape` inside the `app/api/` folder. Then, create a new file `route.ts` inside it. Add the following code:
+
+```typescript
+// app/api/scrape/route.ts
+import FirecrawlApp, { CrawlParams, CrawlStatusResponse } from '@mendable/firecrawl-js';
+import { NextResponse } from 'next/server';
+import fs from 'fs';
+import path from 'path';
+
+export async function POST(request: Request) {
+  try {
+    const { url } = await request.json();
+
+    const app = new FirecrawlApp({apiKey: process.env.FIRECRAWL_API_KEY});
+
+    // Scrape a website
+    const scrapeResponse = await app.scrapeUrl(url, {
+        formats: ['markdown'],
+    });
+
+    if (!scrapeResponse.success) {
+        throw new Error(`Failed to scrape: ${scrapeResponse.error}`)
+    }
+
+    console.log("====================================")
+    console.log('Scraped data:', scrapeResponse);
+
+    // Write scraped markdown data to a new file
+    const filesDir = path.join(process.cwd(), 'files');
+    const fileName = `scraped_${Date.now()}.md`;
+    const filePath = path.join(filesDir, fileName);
+
+    // Ensure the "files" directory exists
+    if (!fs.existsSync(filesDir)) {
+      fs.mkdirSync(filesDir, { recursive: true });
+    }
+
+    // Write markdown content to the file
+    fs.writeFileSync(filePath, scrapeResponse.markdown!);
+
+    console.log(`Markdown file saved at: ${filePath}`);
+
+    return NextResponse.json({ 
+      message: 'Scrape successful and file saved.', 
+      filePath 
+    });
+  } catch (error: any) {
+    console.error('Error in /api/scrape', error);
+    return NextResponse.json(
+      { error: error.message || 'Internal Server Error' },
+      { status: 500 }
+    );
+  }
+}
+```
+
+The `POST` function will scrape the website using the `Firecrawl` API and save the scraped data to a markdown file. It will then return the file path of the saved markdown file. Scrape: scrapes the content of a web page and return it in LLM-ready format. Here's documentation on [Firecrawl: Scrape API](https://docs.firecrawl.dev/introduction#scraping).
+
+For example: Take a look at the `files/scraped_1734452873592.md` file. It contains the scraped data in markdown format.
+
+Don't forget to get your `Firecrawl API key` and set `.env` file. Here's a tutorial on [How to get API Key from Firecrawl](https://dev.to/abdibrokhim/how-to-get-api-key-from-firecrawl-4d5g) . Setup process a little below, here [Environment Variables](#environment-variables).
+
+
+#### Firecrawl: Crawl API
+
+Create a new folder `firecrawl` inside the `app/api/` folder. Then, create a new file `route.ts` inside it. Add the following code:
+
+```typescript
+// app/api/firecrawl/route.ts
+import FirecrawlApp, { CrawlParams, CrawlStatusResponse } from '@mendable/firecrawl-js';
+import { NextResponse } from 'next/server';
+import fs from 'fs';
+import path from 'path';
+
+export async function POST(request: Request) {
+    try {
+        const { url } = await request.json();
+
+        const app = new FirecrawlApp({apiKey: process.env.FIRECRAWL_API_KEY});
+
+        // Crawl a website
+        const crawlResponse = await app.crawlUrl(url, {
+        limit: 100,
+        scrapeOptions: {
+            formats: ['markdown'],
+        }
+        });
+
+        if (!crawlResponse.success) {
+            throw new Error(`Failed to crawl: ${crawlResponse.error}`)
+        }
+
+        console.log(crawlResponse)
+
+        console.log("====================================")
+        console.log('Crawled data:', crawlResponse);
+
+        // Ensure the "files" directory exists
+        const filesDir = path.join(process.cwd(), 'files');
+        if (!fs.existsSync(filesDir)) {
+          fs.mkdirSync(filesDir, { recursive: true });
+        }
+    
+        // Write the scraped markdown data to a file
+        const timeStamp = Date.now();
+    
+        // Write the entire scrapeResponse to a .json file
+        const jsonFileName = `scraped_${timeStamp}.json`;
+        const jsonFilePath = path.join(filesDir, jsonFileName);
+        fs.writeFileSync(jsonFilePath, JSON.stringify(crawlResponse, null, 2), 'utf8');
+        console.log(`JSON file saved at: ${jsonFilePath}`);
+    
+        return NextResponse.json({ 
+          message: 'Scrape successful and files saved.', 
+          jsonFilePath
+        });
+  } catch (error: any) {
+    console.error('Error in /api/firecrawl', error);
+    return NextResponse.json(
+      { error: error.message || 'Internal Server Error' },
+      { status: 500 }
+    );
+  }
+}
+```
+
+The `POST` function will crawl the website using the `Firecrawl` API and save the crawled data to a JSON file. It will then return the file path of the saved JSON file. Crawl: scrapes all the URLs of a web page and return content in LLM-ready format. Here's documentation on [Firecrawl: Crawl API](https://docs.firecrawl.dev/introduction#crawling).
+
+For example: Take a look at the `files/scraped_1734447602439.json` file. It contains the crawled data of whole website in JSON format.
+
+
+#### Redesign API
+
+Create a new folder `redesign` inside the `app/api/` folder. Then, create a new file `route.ts` inside it. Add the following code:
+
+```typescript
+// app/api/redesign/route.ts
+import { NextResponse } from 'next/server';
+import { chatCompletion, layoutGenerator } from './utils/ass';
+import { buildSite } from './utils/webbuilder';
+
+export async function POST(request: Request) {
+  try {
+    // we will get JSON file path.
+    const { filePath, ptype } = await request.json();
+
+    if (ptype === 1) {
+      const response = await chatCompletion(filePath);
+      console.log("====================================")
+      console.log('response:');
+      console.log(response);
+      
+      const layoutPath = await layoutGenerator('src/app/api/redesign/utils/layout.txt');
+      console.log("====================================")
+      console.log('layoutPath:');
+      console.log(layoutPath);
+    } else {
+      const buildResponse = await buildSite(filePath);
+      const msg = buildResponse.message;
+      const fdir = buildResponse.demoDir;
+      
+      console.log("====================================")
+      console.log('msg: ', msg);
+      console.log('fdir: ', fdir);
+    }
+    const newwebsitepath = "demo";
+
+    return NextResponse.json({ newwebsitepath });
+  } catch (error: any) {
+    console.error('Error in /api/redesign:', error);
+    return NextResponse.json(
+      { error: error.message || 'Internal Server Error' },
+      { status: 500 }
+    );
+  }
+}
+```
+
+Here we are getting two parameters: `filePath` and `ptype`. If `ptype` is `1`, then we will call `chatCompletion` and `layoutGenerator` functions. And scrape single page. Otherwise, we will call `buildSite` function. And scrape iteratively all the pages and build the website.
+
+Create a new folder; `utils`.
+
+Add `ass.ts` file inside the `utils` folder.
+
+Setup AI/ML API and system prompt.
+
+```typescript
+import { instr } from "./instr";
+import fs from 'fs';
+import path from 'path';
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+    dangerouslyAllowBrowser: true,
+});
+
+const systemPrompt = instr;
+```
+
+Implement the `chatCompletion` function. It will read the markdown content from the file, send it to the OpenAI API, and write the response to the `page.tsx` file. Save it in the `demo` folder.
+
+```typescript
+export const chatCompletion = async (filePath: string) => {
+    console.log("loading chatCompletion...");
+  
+    console.log("====================================");
+    console.log("systemPrompt: ");
+    console.log(systemPrompt);
+  
+    try {
+        console.log("====================================");
+        console.log("Opening file...")
+        
+        const fileContent = fs.readFileSync(filePath, 'utf8');
+        
+        console.log("====================================");
+        console.log("fileContent: ");
+        console.log(fileContent);
+
+        console.log("====================================");
+        console.log("Sending request to OpenAI API...");
+
+        const completion = await openai.chat.completions.create({
+            messages: [
+                {
+                    role: "system",
+                    content: systemPrompt,
+                },
+                {
+                    role: "user",
+                    content: "[Markdown content]:"+"\n\n"+fileContent,
+                },
+            ],
+            model: "gpt-4o",
+        });
+
+        const responseMessages = completion.choices[0].message.content;
+        console.log("====================================")
+        console.log("responseMessages: ");
+        console.log(responseMessages);
+
+        // Create the demo directory if it doesn't exist
+        const demoDir = path.join(process.cwd(), 'src', 'app', 'demo');
+        if (!fs.existsSync(demoDir)) {
+            fs.mkdirSync(demoDir, { recursive: true });
+        }
+
+        // Define the output file path
+        const outputPath = path.join(demoDir, 'page.tsx');
+
+        // remove first and last line
+        const processedMessages = removeFirstAndLastLines(responseMessages);
+
+        // Write the response to the file
+        fs.writeFileSync(outputPath, processedMessages!, 'utf8');
+        console.log("====================================")
+        console.log("File written successfully to:", outputPath);
+
+        // Return the relative path from the project root
+        return path.relative(process.cwd(), outputPath);
+
+    } catch (error) {
+        console.error("Error fetching the data:", error);
+        return "An error occurred while fetching the data.";
+    }
+}
+```
+
+Remove first and last lines from the response messages. Usually GPT-4o adds language specific messages or code blocks.
+
+```typescript
+function removeFirstAndLastLines(str: string | null | undefined): string {
+    if (!str) {
+      return ""; // Or handle null/undefined differently if needed
+    }
+  
+    const lines = str.split('\n');
+    if (lines.length <= 1) {  // Handle short strings
+      return ""; // Or return the original string if desired: return str;
+    }
+  
+    lines.shift();
+    lines.pop();
+    return lines.join('\n');
+}
+```
+
+Now implement the `layoutGenerator` function. It will simply read the already prepared template file and write the response to the `layout.tsx` file. Save it in the same directory as `page.tsx`.
+
+```typescript
+// add `layout.tsx` to the same directory as `page.tsx`.
+export const layoutGenerator = async (filePath: string) => {
+    // simply read the file content from `filePath` and write to the `layout.tsx` file. save it in the same directory as `page.tsx`.
+    console.log("loading layoutGenerator...");
+    try {
+        console.log("====================================")
+        console.log("Opening file...")
+        
+        const fileContent = fs.readFileSync(filePath, 'utf8');
+        
+        console.log("====================================")
+        console.log("fileContent: ");
+        console.log(fileContent);
+
+        // Create the demo directory if it doesn't exist
+        const demoDir = path.join(process.cwd(), 'src', 'app', 'demo');
+        if (!fs.existsSync(demoDir)) {
+            fs.mkdirSync(demoDir, { recursive: true });
+        }
+
+        // Define the output file path
+        const outputPath = path.join(demoDir, 'layout.tsx');
+
+        // Write the response to the file
+        fs.writeFileSync(outputPath, fileContent, 'utf8');
+        console.log("====================================")
+        console.log("File written successfully to:", outputPath);
+
+        // Return the relative path from the project root
+        return path.relative(process.cwd(), outputPath);
+
+    } catch (error) {
+        console.error("Error fetching the data:", error);
+        return "An error occurred while fetching the data.";
+    }
+}
+```
+
+Intructions for the GPT-4o. Add `instr.ts` file inside the `utils` folder. Add the following code:
+
+```typescript
+// instr.js
+export const instr = `
+    Develop a Next.js application that takes the Markdown content of a scraped modern one-page website and transforms its design to strictly reflect 90s web aesthetics with weird color schemes, fonts, and layouts. 
+    The transformation includes modifying layouts, color schemes, fonts, and ensuring compatibility with 90s-era web technologies.
+
+    [Challenge]:
+    Develop a system to analyze modern web designs and convert them to 90s aesthetics. You may align them based on the Markdown content.
+
+    [Technologies Used]:
+    Next.js: React framework for server-side rendering and static site generation.
+    React: TypeScript library for building user interfaces.
+    TypeScript: Superset of JavaScript for static type checking.
+    Tailwind CSS: Utility-first CSS framework for rapid UI development.
+    Markdown: Format of the input content to be transformed -> "page.tsx"
+
+    [Key Tasks]:
+    Transform layouts to reflect 90s design patterns. Super simple, no complex layouts.
+    Convert modern color schemes to 90s-appropriate palettes. Make sure colors highly compatible with 90s-era web technologies.
+    Replace modern fonts with period-appropriate alternatives.
+    Ensure compatibility with 90s-era web technologies.
+
+    [Return]:
+    As an output only return the full code that will be placed inside "page.tsx" file. Return only the code, full implementation. 
+    Never explain the code. Don't write comments. Don't write console.log().
+    Just return the code that will be placed inside "page.tsx" file. The code should 90s web aesthetics.
+    Strictly keep the imgae URLs as they are. Don't change the image URLs.
+    Make sure to keep the navigation paths as they are. Don't change the navigation paths.
+
+    Always start with the following code (SUPER STRICT):
+
+    'use client';
+
+    import Image from 'next/image';
+    import React, { useEffect, useState } from 'react';
+
+    export default function Home() {
+        return (
+            <></>
+        );
+    }
+    
+`;
+```
+
+We have done with the single page. 
+
+The next step is to implement the `buildSite` function. The most comprehensive part of the tutorial. It will scrape all the pages of the modern website, pre-process it, build the 90s styled website, loop ovre the all pages, and save it in the `demo` or other folders with corresponding files.
+
+Let's first implement all the helper functions. They will help us to properly build the website.
+
+Folder maker function `foldermaker.ts`:
+
+```typescript
+import fs from 'fs';
+import path from 'path';
+
+export function ensureFolderStructure(folderName: string) {
+    const demoDir = path.join(process.cwd(), 'src', 'app', 'demo');
+    if (!fs.existsSync(demoDir)) {
+      fs.mkdirSync(demoDir, { recursive: true });
+    }
+  
+    // create subfolder under demo
+    const folderPath = path.join(demoDir, folderName);
+    if (!fs.existsSync(folderPath)) {
+      fs.mkdirSync(folderPath, { recursive: true });
+    }
+  
+    return folderPath;
+}
+```
+
+Layout generator function `layoutgen.ts`:
+
+```typescript
+import fs from 'fs';
+import path from 'path';
+
+export async function layoutGenerator(folderPath: string, title: string, description: string) {
+    console.log("Generating layout for folder:", folderPath);
+  
+    const layoutTemplatePath = "src/app/api/redesign/utils/layout.txt";
+    if (!fs.existsSync(layoutTemplatePath)) {
+      throw new Error(`layout.txt template not found at: ${layoutTemplatePath}`);
+    }
+  
+    const templateContent = fs.readFileSync(layoutTemplatePath, 'utf8');
+    const replacedContent = templateContent
+      .replace('{{title}}', title || 'Default Title')
+      .replace('{{description}}', description || 'Default Description');
+  
+    const layoutPath = path.join(folderPath, 'layout.tsx');
+    fs.writeFileSync(layoutPath, replacedContent, 'utf8');
+  
+    console.log("layout.tsx created at:", layoutPath);
+}
+```
+
+Here `title` and `description` will be replaced based on the scraped data.
+
+Page generator function `pagegen.ts`:
+
+```typescript
+import fs from 'fs';
+import path from 'path';
+import { removeFirstAndLastLines } from './cleaner';
+
+
+export function pageGenerator(folderPath: string, pageContent: string) {
+    const pagePath = path.join(folderPath, 'page.tsx');
+    // If you need to remove first and last lines from pageContent, uncomment the below line
+    const processedContent = removeFirstAndLastLines(pageContent);
+    fs.writeFileSync(pagePath, processedContent, 'utf8');
+    console.log("page.tsx created at:", pagePath);
+}
+```
+
+Cleaner function `cleaner.ts`:
+
+```typescript
+export function removeFirstAndLastLines(str: string | null | undefined): string {
+    if (!str) {
+      return ""; // Or handle null/undefined differently if needed
+    }
+  
+    const lines = str.split('\n');
+    if (lines.length <= 1) {  // Handle short strings
+      return ""; // Or return the original string if desired: return str;
+    }
+  
+    lines.shift();
+    lines.pop();
+    return lines.join('\n');
+}
+```
+
+Find markdown and return it `helpers.ts`:
+
+```typescript
+export function findMarkdown(item: any): string {
+    return item.markdown || '';
+}
+```
+
+GPT-4o completion function `gpt.ts`:
+
+```typescript
+import { instr } from "./instr";
+import fs from 'fs';
+import path from 'path';
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+    dangerouslyAllowBrowser: true,
+});
+
+export const chatCompletion = async (markdown: string) => {
+    console.log("loading chatCompletion...");
+  
+    const systemPrompt = instr;
+    console.log("====================================");
+    console.log("systemPrompt: ");
+    console.log(systemPrompt);
+  
+    try {
+        console.log("====================================");
+        console.log("Opening file...")
+        
+        console.log("====================================");
+        console.log("markdown: ");
+        console.log(markdown);
+
+        console.log("====================================");
+        console.log("Sending request to OpenAI API...");
+
+        const completion = await openai.chat.completions.create({
+            messages: [
+                {
+                    role: "system",
+                    content: systemPrompt,
+                },
+                {
+                    role: "user",
+                    content: "[Markdown content]:"+"\n\n"+markdown,
+                },
+            ],
+            model: "gpt-4o",
+        });
+
+        const responseMessages = completion.choices[0].message.content;
+        console.log("====================================")
+        console.log("responseMessages or styled nextjs string: ");
+        console.log(responseMessages);
+
+        return responseMessages;
+
+    } catch (error) {
+        console.error("Error fetching the data:", error);
+        return "An error occurred while fetching the data.";
+    }
+}
+```
+
+We have done with helpers. Now, let's implement the `buildSite` function.
+
+```typescript
+import fs from "fs";
+import path from "path";
+import { layoutGenerator } from "./layoutgen";
+import { pageGenerator } from "./pagegen";
+import { chatCompletion } from "./gpt";
+import { ensureFolderStructure } from "./foldermaker";
+import { findMarkdown } from "./helpers";
+
+export async function buildSite(filePath: string) {
+    // Load your scraped JSON data
+    let jsonFilePath = filePath;
+    if (!path.isAbsolute(filePath)) {
+      jsonFilePath = path.join(process.cwd(), filePath);
+    }
+
+    if (!fs.existsSync(jsonFilePath)) {
+      throw new Error(`${filePath} not found`);
+    }
+
+    const rawData = fs.readFileSync(jsonFilePath, 'utf8');
+    const jsonData = JSON.parse(rawData);
+  
+    // Ensure main demo folder
+    const demoDir = path.join(process.cwd(), 'src', 'app', 'demo');
+    if (!fs.existsSync(demoDir)) {
+      fs.mkdirSync(demoDir, { recursive: true });
+    }
+
+    const mainPageData = findMainPageData(jsonData.data);
+
+    const pageTitle = mainPageData.metadata.title || 'Raptors.dev';
+    const pageDescription = mainPageData.metadata.description || 'Raptors.dev is a collection of useful resources for developers.';
+  
+    // Create layout.tsx in the root "demo" folder. 
+    // If you want the root layout different, you can do it here:
+    await layoutGenerator(demoDir, pageTitle, pageDescription);
+
+    const pageContent = findMarkdown(mainPageData);
+  
+    // Create page.tsx in the root "demo" folder if needed.
+    // Or skip if you do not need a root page.
+    const rootPageContent = await chatCompletion(pageContent);
+    pageGenerator(demoDir, rootPageContent!);
+  
+    // Build a map: folderName -> { title, description, markdowns: string[] }
+    const folderMap: Record<string, {title: string, description: string, markdowns: string[]}> = {};
+  
+    for (const item of jsonData.data) {
+      const url: string = item.metadata.url;
+      // Extract folder name: everything after 'https://www.raptors.dev/'
+      const folderName = url.replace('https://www.raptors.dev/', '').split('?')[0]; 
+      // Remove trailing slashes if any
+      const cleanedFolderName = folderName.replace(/\/$/, '') || ''; 
+  
+      // If it's the root (e.g. ""), you can skip or handle differently
+      if (!cleanedFolderName) {
+        continue;
+      }
+  
+      const title = item.metadata.title || 'Default Title';
+      const description = item.metadata.description || 'Default Description';
+      const markdownContent = findMarkdown(item);
+  
+      if (!folderMap[cleanedFolderName]) {
+        folderMap[cleanedFolderName] = { title, description, markdowns: [] };
+      }
+  
+      folderMap[cleanedFolderName].markdowns.push(markdownContent);
+    }
+  
+    // Now loop over each folder and generate layout.tsx and page.tsx
+    for (const [folderName, data] of Object.entries(folderMap)) {
+      const folderPath = ensureFolderStructure(folderName);
+  
+      // Generate layout.tsx per folder
+      await layoutGenerator(folderPath, data.title, data.description);
+  
+      // Combine all markdown entries for this folder
+      const combinedMarkdown = data.markdowns.join('\n\n');
+  
+      // Call chatCompletion to transform markdown to page.tsx content
+      const pageContent = await chatCompletion(combinedMarkdown);
+  
+      // Write page.tsx in the folder
+      pageGenerator(folderPath, pageContent!);
+    }
+  
+    console.log('All pages and layouts generated successfully!');
+
+    return { message: 'All pages and layouts generated successfully!', demoDir };
+}
+
+// scrape individual markdown content from the JSON data where the "url"=== "https://www.raptors.dev/" super strictly!
+function findMainPageData(data: any) {
+    for (const item of data) {
+      if (item.metadata.url === 'https://www.raptors.dev/') {
+        return item;
+      }
+    }
+  
+    return '';
+}
+```
+
+Brief explanation of the `buildSite` function:
+
+The `buildSite` function, after all helpers have been implemented, follows a detailed sequence to transform a modern website’s scraped JSON data into a classic, 90s-themed Next.js directory structure:
+
+1. **Load and Parse JSON Data:**  
+   It reads the provided JSON file (which contains scraped website data), and parses it into a JavaScript object.
+
+2. **Set Up the Output Directory (demo folder):**  
+   It ensures that the main `demo` directory is created. This serves as the root folder where all generated pages and layouts will be stored.
+
+3. **Extract Main Page Data:**  
+   It identifies the main page data (the page that corresponds to the root URL, e.g., `https://www.raptors.dev/`) from the JSON. This ensures we have a reference point for the main site’s title, description, and initial content.
+
+4. **Generate the Root Layout and Page:**  
+   Using the `layoutGenerator` helper, it creates the root `layout.tsx` file with the site’s main title and description.  
+   It then uses `chatCompletion` to transform the main page’s scraped markdown content into a `page.tsx` file that matches the retro styling.
+
+5. **Build a Folder Map for Sub-Pages:**  
+   It constructs a mapping of folder names (derived from each page’s URL) to their respective page titles, descriptions, and collected markdown content. This mapping allows the function to handle sub-pages systematically.
+
+6. **Iterate Over All Pages and Sub-Pages:**  
+   For each sub-page:
+   - A dedicated folder is created (using `ensureFolderStructure`).
+   - A `layout.tsx` file is generated for that folder (again using `layoutGenerator`).
+   - The combined markdown content for that folder is processed through `chatCompletion` to produce a `page.tsx` file representing the 90s-styled version of that page.
+
+7. **Finish Up:**  
+   After all pages are processed, a success message is logged, and the generated site structure (with `layout.tsx` and `page.tsx` files) is now complete within the `demo` directory.
+
+In summary, `buildSite` orchestrates the entire workflow: from reading and preparing data, through generating both layout and content files, to outputting a fully structured, retro-styled Next.js site.
+
+> OMG! We have done with the API routes. 🎉
+
+It was super fun to implement the API routes. Now, let's test the application locally.
+
+But, before that. I wanted to tell you something. These entire `helper` functions and main `builder` were implemented by ChatGPT. LMAO 😂. Check the `src/app/instr.txt` for used prompt and `src/app/daft.txt` for draft idea. I hope it will help you to LEVEL UP your prompt engineering skills. 🔥
+
+
+### Styling
+
+Oh, we forgot some stuff; styling. Open `globals.css` file and remove everything. Add the following code:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --violet: #625df5;
+  --ring: #625df580;
+  --bg-a: #0B0E11;
+  --text-a: #FFFFFF;
+  --text-b: #C3C4C7;
+  --text-c: #787B89;
+  --orange: #ee5d19;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --violet: hsla(242,88.4%,66.3%,1);
+    --bg-a: #0B0E11;
+    --text-a: #FFFFFF;
+    --text-b: #C3C4C7;
+    --text-c: #787B89;
+    --orange: #ee5d19;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+::selection {
+  background-color: var(--violet);
+  color: var(--text-a);
+}
+```
+
+Save it. Well crafted color palette you have ever seen. By ME for YOU 🎨
 
 
 #### App Info
@@ -629,7 +1369,7 @@ Enter this link `https://www.raptors.dev/` and select `4+ pages` from dropdown. 
 
 I streamed the whole process here on my Twitch channel. You can watch the recording here:
 
-[![Watch on Twitch](https://img.shields.io/badge/Watch%20on-YouTube-red?style=for-the-badge&logo=youtube)](https://www.twitch.tv/videos/2329114716)
+[![Watch on Twitch](public/assets/767351_twitch_christmas_stream_icon.png)](https://www.twitch.tv/videos/2329114716)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch%20on-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/_wTaMLL4by0?si=nvSbaOktXjk3aw7l)
 

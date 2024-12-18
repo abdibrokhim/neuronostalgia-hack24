@@ -14,7 +14,20 @@
 - [Getting Started](#getting-started)
   - [Create a New Next.js Project](#create-a-new-nextjs-project)
   - [Design the UI](#design-the-ui)
+    - [Notification Component](#notification-component)
+    - [App Interface](#app-interface)
   - [API Routes](#api-routes)
+    - [Firecrawl: Scrape API](#firecrawl-scrape-api)
+    - [Firecrawl: Crawl API](#firecrawl-crawl-api)
+    - [Redesign API](#redesign-api)
+    - [Main Function: Build Site](#main-function-build-site)
+  - [Styling](#styling)
+  - [App Info](#app-info)
+  - [Run Locally](#run-locally)
+    - [Start the App](#start-the-app)
+  - [Testing](#testing)
+  - [Stream: Live on Twitch](#stream-live-on-twitch)
+  - [Example: Scraped and Redesigned Website](#example-scraped-and-redesigned-website)
 - [Further Improvements](#further-improvements)
 - [Conclusion](#conclusion)
   - [Other Interesting Tutorials](#other-interesting-tutorials)
@@ -1157,6 +1170,8 @@ export const chatCompletion = async (markdown: string) => {
 }
 ```
 
+#### Main Function: Build Site
+
 We have done with helpers. Now, let's implement the `buildSite` function.
 
 ```typescript
@@ -1353,7 +1368,7 @@ body {
 Save it. Well crafted color palette you have ever seen. By ME for YOU 🎨
 
 
-#### App Info
+### App Info
 
 You can also change your app details. Just open `src/app/layout.tsx` and update both `title` and `description` fields:
 
